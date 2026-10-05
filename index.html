@@ -37,40 +37,23 @@
   header{position:sticky;top:0;z-index:1000;background:rgba(251,249,244,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:.4s}
   header.scrolled{box-shadow:var(--shadow-md);background:rgba(251,249,244,.98)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:20px}
-
   .brand{display:flex;align-items:center;gap:14px;transition:.3s}
   .brand:hover{transform:scale(1.02)}
   .brand-logo-block{display:flex;flex-direction:column;align-items:center;gap:0}
-
-  .brand-name-ar{
-    font-family:'Aref Ruqaa','Amiri',serif;
-    font-size:1.15rem;font-weight:700;
-    color:var(--navy);line-height:1;letter-spacing:1px;
-    margin-bottom:4px;
-  }
+  .brand-name-ar{font-family:'Aref Ruqaa','Amiri',serif;font-size:1.15rem;font-weight:700;color:var(--navy);line-height:1;letter-spacing:1px;margin-bottom:4px}
   html[lang="en"] .brand-name-ar{font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:2px}
-
-  .brand-logo-img{
-    height:58px;width:auto;max-width:200px;
-    object-fit:contain;display:block;transition:.4s;
-    filter:drop-shadow(0 2px 10px rgba(201,169,97,.25));
-  }
+  .brand-logo-img{height:58px;width:auto;max-width:200px;object-fit:contain;display:block;transition:.4s;filter:drop-shadow(0 2px 10px rgba(201,169,97,.25))}
   .brand-logo-img:hover{transform:scale(1.05)}
-
-  /* ===== روابط ===== */
-  .nav-links{display:flex;gap:24px;list-style:none;align-items:center}
-  .nav-links a{color:var(--navy);font-size:.88rem;font-weight:500;position:relative;transition:.3s}
+  .nav-links{display:flex;gap:22px;list-style:none;align-items:center}
+  .nav-links a{color:var(--navy);font-size:.86rem;font-weight:500;position:relative;transition:.3s}
   .nav-links a::after{content:'';position:absolute;bottom:-6px;right:50%;transform:translateX(50%);width:0;height:1.5px;background:var(--gold-3);transition:.4s}
   .nav-links a:hover{color:var(--gold-3)}
   .nav-links a:hover::after{width:100%}
-
   .nav-actions{display:flex;align-items:center;gap:12px}
-
   .lang-toggle{display:flex;align-items:center;background:rgba(10,31,61,.06);border:1px solid rgba(10,31,61,.12);border-radius:30px;padding:3px;cursor:pointer}
   .lang-btn{padding:6px 14px;border-radius:30px;font-size:.78rem;font-weight:600;border:none;background:transparent;cursor:pointer;color:var(--navy);transition:.3s;font-family:'Tajawal'}
   html[lang="en"] .lang-btn{font-family:'Inter'}
   .lang-btn.active{background:var(--navy);color:var(--ivory);box-shadow:0 4px 12px rgba(10,31,61,.25)}
-
   .btn{display:inline-block;padding:12px 26px;border-radius:8px;font-weight:600;font-size:.88rem;transition:.4s;cursor:pointer;border:none;font-family:'Tajawal'}
   html[lang="en"] .btn{font-family:'Inter'}
   .btn-navy{background:var(--navy);color:var(--ivory);box-shadow:0 8px 24px rgba(10,31,61,.25)}
@@ -79,13 +62,12 @@
   .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,169,97,.55)}
   .btn-outline-light{background:transparent;color:var(--ivory);border:1.5px solid rgba(251,249,244,.5)}
   .btn-outline-light:hover{background:var(--ivory);color:var(--navy);border-color:var(--ivory)}
-
   .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer}
 
   /* ===== الهيرو ===== */
   .hero{position:relative;padding:100px 0 110px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
-  .hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;filter:brightness(.35)}
-  .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(10,31,61,.9),rgba(18,47,87,.75))}
+  .hero-bg{position:absolute;inset:0;z-index:0;background-image:url('office.jpg');background-size:cover;background-position:center;filter:brightness(.4) blur(1px);transform:scale(1.05)}
+  .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(10,31,61,.92),rgba(18,47,87,.8))}
   .hero-content{position:relative;z-index:2;width:100%;color:var(--ivory)}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
   .hero-tag{display:inline-flex;align-items:center;gap:10px;padding:8px 20px;border-radius:30px;background:rgba(201,169,97,.15);border:1px solid rgba(201,169,97,.4);color:var(--gold-2);font-size:.82rem;margin-bottom:26px;letter-spacing:1px}
@@ -99,11 +81,27 @@
   .hero-feature{display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(251,249,244,.9)}
   .hero-feature .check{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold-3),var(--gold-2));display:grid;place-items:center;color:var(--navy);font-size:.7rem;font-weight:900}
 
-  .hero-visual{background:rgba(251,249,244,.05);border:1px solid rgba(201,169,97,.25);border-radius:20px;padding:38px 32px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 40px 100px rgba(0,0,0,.4)}
-  .hero-visual h3{color:var(--gold-2);font-size:1.3rem;margin-bottom:22px;display:flex;align-items:center;gap:10px}
-  .hero-visual ul{list-style:none;display:grid;gap:16px}
-  .hero-visual li{display:flex;align-items:flex-start;gap:12px;color:rgba(251,249,244,.9);font-size:.95rem;padding-bottom:16px;border-bottom:1px dashed rgba(201,169,97,.2)}
-  .hero-visual li:last-child{border:none;padding-bottom:0}
+  /* صورة المؤسس في الهيرو */
+  .hero-photo-card{
+    position:relative;border-radius:24px;overflow:hidden;
+    box-shadow:0 40px 100px rgba(0,0,0,.5);
+    border:3px solid rgba(201,169,97,.4);
+    aspect-ratio:4/5;max-width:420px;margin-right:auto;
+    background:var(--navy);
+  }
+  .hero-photo-card img{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .hero-photo-card:hover img{transform:scale(1.05)}
+  .hero-photo-card::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 50%,rgba(10,31,61,.7));
+    pointer-events:none;
+  }
+  .hero-photo-caption{
+    position:absolute;bottom:0;right:0;left:0;padding:24px;z-index:2;
+    color:var(--ivory);
+  }
+  .hero-photo-caption .name{font-family:'Amiri';font-size:1.4rem;font-weight:700;color:var(--gold-2);display:block;margin-bottom:4px}
+  .hero-photo-caption .role{font-size:.85rem;color:rgba(251,249,244,.85)}
 
   /* ===== الأقسام ===== */
   section{padding:100px 0;position:relative}
@@ -117,10 +115,10 @@
   /* ===== عن المكتب ===== */
   .about{background:var(--ivory-2)}
   .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
-  .about-visual{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;aspect-ratio:4/5}
+  .about-visual{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;aspect-ratio:4/5;border:3px solid #fff}
   .about-visual img{width:100%;height:100%;object-fit:cover;transition:.6s}
   .about-visual:hover img{transform:scale(1.05)}
-  .about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,31,61,.4))}
+  .about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,31,61,.5))}
   .about-text h3{font-size:2rem;color:var(--navy);margin-bottom:22px;line-height:1.4}
   .about-text h3 span{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
   .about-text p{color:var(--text);margin-bottom:18px;font-size:1rem;line-height:2}
@@ -144,29 +142,21 @@
   .sector-list{list-style:none;display:grid;gap:8px}
   .sector-list li{display:flex;align-items:flex-start;gap:8px;font-size:.88rem;color:var(--text)}
   .sector-list li::before{content:'◆';color:var(--sector-color,var(--gold));font-size:.7rem;flex-shrink:0;line-height:2}
-  .sector-1{--sector-color:#1e4573}
-  .sector-2{--sector-color:#a8874a}
-  .sector-3{--sector-color:#1a6b52}
-  .sector-4{--sector-color:#8b1e3f}
-  .sector-5{--sector-color:#0d6b7a}
-  .sector-6{--sector-color:#5a3a7d}
+  .sector-1{--sector-color:#1e4573}.sector-2{--sector-color:#a8874a}.sector-3{--sector-color:#1a6b52}
+  .sector-4{--sector-color:#8b1e3f}.sector-5{--sector-color:#0d6b7a}.sector-6{--sector-color:#5a3a7d}
 
   /* ===== المؤسس ===== */
   .founder{background:var(--ivory-2)}
   .founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-  .founder-visual{position:relative}
-  .founder-img-box{
-    aspect-ratio:1;border-radius:20px;
+  .founder-visual{position:relative;max-width:480px;margin:0 auto}
+  .founder-photo{
+    aspect-ratio:4/5;border-radius:20px;overflow:hidden;
     box-shadow:var(--shadow-lg);position:relative;
-    background:linear-gradient(135deg,#fff,#fbf9f4);
-    display:grid;place-items:center;padding:40px;
-    border:1px solid var(--border);
+    border:4px solid #fff;
   }
-  .founder-img{
-    width:95%;height:auto;object-fit:contain;
-    filter:drop-shadow(0 15px 30px rgba(10,31,61,.15));
-  }
-  .founder-badge{position:absolute;bottom:-20px;left:-20px;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--ivory);padding:24px 30px;border-radius:16px;box-shadow:var(--shadow-lg);border:2px solid var(--gold);max-width:250px}
+  .founder-photo img{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .founder-photo:hover img{transform:scale(1.05)}
+  .founder-badge{position:absolute;bottom:-20px;left:-20px;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--ivory);padding:24px 30px;border-radius:16px;box-shadow:var(--shadow-lg);border:2px solid var(--gold);max-width:230px;z-index:3}
   .founder-badge b{display:block;font-family:'Amiri';font-size:2rem;color:var(--gold-2);line-height:1;margin-bottom:4px}
   .founder-badge span{font-size:.85rem;color:rgba(251,249,244,.85)}
   .founder-text h2{font-size:2.4rem;color:var(--navy);line-height:1.3;margin-bottom:14px}
@@ -174,6 +164,20 @@
   .founder-text p{color:var(--text);font-size:1rem;margin-bottom:18px;line-height:2}
   .founder-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
   .f-badge{padding:8px 18px;border-radius:30px;background:rgba(10,31,61,.05);border:1px solid rgba(10,31,61,.12);color:var(--navy);font-size:.82rem;font-weight:500}
+
+  /* ===== معرض الصور ===== */
+  .gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;grid-auto-rows:200px}
+  .gallery-item{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:.4s;position:relative;background:var(--navy)}
+  .gallery-item:nth-child(1){grid-column:span 3;grid-row:span 2}
+  .gallery-item:nth-child(2){grid-column:span 3;grid-row:span 1}
+  .gallery-item:nth-child(3){grid-column:span 3;grid-row:span 1}
+  .gallery-item:nth-child(4){grid-column:span 3;grid-row:span 2}
+  .gallery-item:nth-child(5){grid-column:span 3;grid-row:span 2}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .gallery-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);z-index:2}
+  .gallery-item:hover img{transform:scale(1.08)}
+  .gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,31,61,.4));opacity:0;transition:.4s;pointer-events:none}
+  .gallery-item:hover::after{opacity:1}
 
   /* ===== لماذا نحن ===== */
   .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
@@ -196,13 +200,15 @@
   /* ===== الحجز ===== */
   .consultation{background:var(--ivory-2)}
   .consult-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1100px;margin:0 auto}
-  .consult-text h2{font-size:2.4rem;color:var(--navy);line-height:1.3;margin-bottom:20px}
+  .consult-visual{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:3px solid #fff;aspect-ratio:4/5;max-width:400px;margin:0 auto}
+  .consult-visual img{width:100%;height:100%;object-fit:cover}
+  .consult-text h2{font-size:2.2rem;color:var(--navy);line-height:1.3;margin-bottom:20px}
   .consult-text h2 .accent{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
   .consult-text > p{color:var(--muted);font-size:1rem;margin-bottom:30px;line-height:2}
   .consult-features{list-style:none;display:grid;gap:14px}
   .consult-features li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--text)}
   .consult-features li::before{content:'✦';color:var(--gold-3);font-size:1.1rem;flex-shrink:0;line-height:1.5}
-  .booking-wrapper{background:var(--paper);border-radius:20px;padding:50px 44px;box-shadow:var(--shadow-lg);border-top:4px solid var(--gold);position:relative}
+  .booking-wrapper{background:var(--paper);border-radius:20px;padding:50px 44px;box-shadow:var(--shadow-lg);border-top:4px solid var(--gold);position:relative;grid-column:1/-1;max-width:800px;margin:40px auto 0}
   .booking-wrapper::before{content:'⚖';position:absolute;top:20px;left:30px;font-size:3rem;opacity:.05}
   .booking-header{text-align:center;margin-bottom:34px}
   .booking-header h3{font-size:1.6rem;color:var(--navy);margin-bottom:8px}
@@ -263,13 +269,7 @@
   /* ===== الفوتر ===== */
   footer{background:#051429;color:rgba(251,249,244,.65);padding:60px 0 30px}
   .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
-  .footer-logo-img{
-    height:auto;width:100%;max-width:340px;
-    object-fit:contain;margin-bottom:20px;
-    background:#fff;padding:14px;border-radius:12px;
-    display:block;
-    filter:drop-shadow(0 10px 30px rgba(0,0,0,.4));
-  }
+  .footer-logo-img{height:auto;width:100%;max-width:340px;object-fit:contain;margin-bottom:20px;background:#fff;padding:14px;border-radius:12px;display:block;filter:drop-shadow(0 10px 30px rgba(0,0,0,.4))}
   .footer-brand-block p{font-size:.88rem;line-height:1.9;margin-bottom:10px;color:rgba(251,249,244,.7)}
   .footer-col h4{color:var(--gold-2);font-size:1rem;margin-bottom:16px;font-family:'Amiri','Playfair Display'}
   .footer-col ul{list-style:none;display:grid;gap:10px}
@@ -314,10 +314,13 @@
     .founder-badge{bottom:-16px;left:-16px;padding:18px 22px}
     .founder-badge b{font-size:1.5rem}
     .footer-grid{grid-template-columns:1fr}
-    .lang-toggle{transform:scale(.9)}
     .brand-logo-img{height:46px;max-width:160px}
     .brand-name-ar{font-size:1rem}
     .footer-logo-img{max-width:280px}
+    .hero-photo-card{max-width:340px;margin:0 auto}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+    .gallery-item:nth-child(1),.gallery-item:nth-child(4),.gallery-item:nth-child(5){grid-column:span 2;grid-row:span 1}
+    .gallery-item:nth-child(2),.gallery-item:nth-child(3){grid-column:span 1;grid-row:span 1}
   }
   @media(max-width:450px){
     .hero h1{font-size:1.8rem}
@@ -326,6 +329,8 @@
     .about-stats{grid-template-columns:1fr}
     .section-head h2{font-size:1.6rem}
     .footer-logo-img{max-width:240px}
+    .gallery-grid{grid-template-columns:1fr;grid-auto-rows:220px}
+    .gallery-item:nth-child(n){grid-column:span 1;grid-row:span 1}
   }
 </style>
 </head>
@@ -349,6 +354,7 @@
       <li><a href="#about" data-ar="عن المكتب" data-en="About">عن المكتب</a></li>
       <li><a href="#sectors" data-ar="القطاعات" data-en="Sectors">القطاعات</a></li>
       <li><a href="#founder" data-ar="المؤسس" data-en="Founder">المؤسس</a></li>
+      <li><a href="#gallery" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
       <li><a href="#booking" data-ar="احجز استشارة" data-en="Book">احجز استشارة</a></li>
       <li><a href="#faq" data-ar="أسئلة" data-en="FAQ">أسئلة</a></li>
       <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
@@ -392,15 +398,12 @@
         </div>
       </div>
 
-      <div class="hero-visual">
-        <h3>⚖ <span data-ar="لماذا مكتبنا؟" data-en="Why Our Firm?">لماذا مكتبنا؟</span></h3>
-        <ul>
-          <li><span class="check">✓</span><span data-ar="خبرة قانونية تمتد لأكثر من 30 عامًا" data-en="Legal expertise extending over 30 years">خبرة قانونية تمتد لأكثر من 30 عامًا</span></li>
-          <li><span class="check">✓</span><span data-ar="فريق من 10 محامين ومستشارين متخصصين" data-en="Team of 10 specialized lawyers & consultants">فريق من 10 محامين ومستشارين متخصصين</span></li>
-          <li><span class="check">✓</span><span data-ar="6 قطاعات تخدم الشركات والأفراد" data-en="6 sectors serving corporations & individuals">6 قطاعات تخدم الشركات والأفراد</span></li>
-          <li><span class="check">✓</span><span data-ar="مقر مركزي في الدقي – الجيزة" data-en="Central office in Dokki – Giza">مقر مركزي في الدقي – الجيزة</span></li>
-          <li><span class="check">✓</span><span data-ar="حلول قانونية متكاملة تحت سقف واحد" data-en="Integrated legal solutions under one roof">حلول قانونية متكاملة تحت سقف واحد</span></li>
-        </ul>
+      <div class="hero-photo-card reveal">
+        <img src="hero.jpg" alt="المحامي سهاد امام - المكتب">
+        <div class="hero-photo-caption">
+          <span class="name">المحامي / سهاد امام</span>
+          <span class="role" data-ar="محامي بالنقض والإدارية العليا" data-en="Attorney before Court of Cassation">محامي بالنقض والإدارية العليا</span>
+        </div>
       </div>
     </div>
   </div>
@@ -416,7 +419,7 @@
     </div>
     <div class="about-grid">
       <div class="about-visual reveal">
-        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Justice">
+        <img src="reading.jpg" alt="المحامي يقرأ المستندات">
       </div>
       <div class="about-text reveal">
         <h3 data-ar="تأسس المكتب وفقًا لقوانين <span>جمهورية مصر العربية</span>" data-en="Founded under the laws of the <span>Arab Republic of Egypt</span>">تأسس المكتب وفقًا لقوانين <span>جمهورية مصر العربية</span></h3>
@@ -510,8 +513,8 @@
   <div class="container">
     <div class="founder-grid">
       <div class="founder-visual reveal">
-        <div class="founder-img-box">
-          <img src="logo-symbol.png" alt="مكتب سهاد امام" class="founder-img">
+        <div class="founder-photo">
+          <img src="founder.jpg" alt="المحامي سهاد امام">
         </div>
         <div class="founder-badge">
           <b>+30</b>
@@ -534,8 +537,26 @@
   </div>
 </section>
 
+<!-- ===== معرض الصور ===== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="معرض الصور" data-en="Gallery">معرض الصور</span>
+      <h2 data-ar="لمحات من <span class='accent'>مكتبنا</span>" data-en="Moments from <span class='accent'>Our Firm</span>">لمحات من <span class="accent">مكتبنا</span></h2>
+      <p data-ar="جولة سريعة في أروقة المكتب ولحظات العمل اليومي" data-en="A quick tour through our office and daily work moments">جولة سريعة في أروقة المكتب ولحظات العمل اليومي</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="hero.jpg" alt="المحامي سهاد امام"></div>
+      <div class="gallery-item reveal"><img src="office.jpg" alt="مكتب المحاماة"></div>
+      <div class="gallery-item reveal"><img src="founder.jpg" alt="مؤسس المكتب"></div>
+      <div class="gallery-item reveal"><img src="reading.jpg" alt="قراءة المستندات"></div>
+      <div class="gallery-item reveal"><img src="pointing.jpg" alt="مناقشة قانونية"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== لماذا نحن ===== -->
-<section id="why">
+<section id="why" style="background:var(--ivory-2)">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-tag" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</span>
@@ -573,6 +594,9 @@
       <p data-ar="املأ البيانات وسيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم" data-en="Fill the form and we will contact you to confirm the appointment and pricing details">املأ البيانات وسيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم</p>
     </div>
     <div class="consult-wrapper">
+      <div class="consult-visual reveal">
+        <img src="pointing.jpg" alt="مناقشة قانونية">
+      </div>
       <div class="consult-text reveal">
         <h2 data-ar="نقدم لك <span class='accent'>استشارة قانونية شاملة</span>" data-en="We provide <span class='accent'>comprehensive legal consultation</span>">نقدم لك <span class="accent">استشارة قانونية شاملة</span></h2>
         <p data-ar="سواء كنت فردًا أو شركة، نقدم لك استشارة قانونية متكاملة تشمل تحليل الموقف وتقديم التوصيات المناسبة. تواصل معنا لمعرفة تفاصيل الرسوم." data-en="Whether you're an individual or a corporation, we offer a comprehensive legal consultation including case analysis and appropriate recommendations. Contact us for pricing details.">سواء كنت فردًا أو شركة، نقدم لك استشارة قانونية متكاملة تشمل تحليل الموقف وتقديم التوصيات المناسبة. تواصل معنا لمعرفة تفاصيل الرسوم.</p>
@@ -765,6 +789,7 @@
           <li><a href="#about" data-ar="عن المكتب" data-en="About">عن المكتب</a></li>
           <li><a href="#sectors" data-ar="القطاعات" data-en="Sectors">القطاعات</a></li>
           <li><a href="#founder" data-ar="المؤسس" data-en="Founder">المؤسس</a></li>
+          <li><a href="#gallery" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
           <li><a href="#booking" data-ar="احجز استشارة" data-en="Book Consultation">احجز استشارة</a></li>
           <li><a href="#faq" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</a></li>
         </ul>
