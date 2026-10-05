@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتب سهاد امام المحامي بالنقض ومعاونوه | النقض والإدارية العليا</title>
+<meta name="description" content="مكتب سهاد امام المحامي بالنقض والإدارية العليا ومعاونوه - خبرة أكثر من 30 عامًا، 6 قطاعات قانونية متكاملة في الدقي، الجيزة.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;900&family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#0a1f3d;--navy-2:#122f57;--navy-3:#1e4573;
+    --gold:#c9a961;--gold-2:#e0c584;--gold-3:#a8874a;
+    --ivory:#fbf9f4;--ivory-2:#f3eee1;
+    --text:#2a2a2a;--muted:#6b6b6b;--paper:#ffffff;
+    --border:rgba(10,31,61,.1);
+    --shadow-sm:0 4px 20px rgba(10,31,61,.06);
+    --shadow-md:0 12px 40px rgba(10,31,61,.1);
+    --shadow-lg:0 30px 80px rgba(10,31,61,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Tajawal','Inter',sans-serif;background:var(--ivory);color:var(--text);line-height:1.9;overflow-x:hidden}
+  html[lang="en"] body{font-family:'Inter','Tajawal',sans-serif;line-height:1.7}
+  h1,h2,h3,h4{font-family:'Amiri','Playfair Display',serif;font-weight:700}
+  html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4{font-family:'Playfair Display',serif}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  #progress{position:fixed;top:0;right:0;height:3px;width:0;z-index:2000;background:linear-gradient(90deg,var(--navy),var(--gold),var(--gold-2));transition:width .1s;box-shadow:0 0 10px var(--gold)}
+
+  /* ===== الهيدر ===== */
+  header{position:sticky;top:0;z-index:1000;background:rgba(251,249,244,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:.4s}
+  header.scrolled{box-shadow:var(--shadow-md);background:rgba(251,249,244,.98)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:20px}
+
+  .brand{display:flex;align-items:center;gap:14px;transition:.3s}
+  .brand:hover{transform:scale(1.02)}
+  .brand-logo-block{display:flex;flex-direction:column;align-items:center;gap:0}
+
+  .brand-name-ar{
+    font-family:'Aref Ruqaa','Amiri',serif;
+    font-size:1.15rem;font-weight:700;
+    color:var(--navy);line-height:1;letter-spacing:1px;
+    margin-bottom:4px;
+  }
+  html[lang="en"] .brand-name-ar{font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:2px}
+
+  .brand-logo-img{
+    height:58px;width:auto;max-width:200px;
+    object-fit:contain;display:block;transition:.4s;
+    filter:drop-shadow(0 2px 10px rgba(201,169,97,.25));
+  }
+  .brand-logo-img:hover{transform:scale(1.05)}
+
+  /* ===== روابط ===== */
+  .nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+  .nav-links a{color:var(--navy);font-size:.88rem;font-weight:500;position:relative;transition:.3s}
+  .nav-links a::after{content:'';position:absolute;bottom:-6px;right:50%;transform:translateX(50%);width:0;height:1.5px;background:var(--gold-3);transition:.4s}
+  .nav-links a:hover{color:var(--gold-3)}
+  .nav-links a:hover::after{width:100%}
+
+  .nav-actions{display:flex;align-items:center;gap:12px}
+
+  .lang-toggle{display:flex;align-items:center;background:rgba(10,31,61,.06);border:1px solid rgba(10,31,61,.12);border-radius:30px;padding:3px;cursor:pointer}
+  .lang-btn{padding:6px 14px;border-radius:30px;font-size:.78rem;font-weight:600;border:none;background:transparent;cursor:pointer;color:var(--navy);transition:.3s;font-family:'Tajawal'}
+  html[lang="en"] .lang-btn{font-family:'Inter'}
+  .lang-btn.active{background:var(--navy);color:var(--ivory);box-shadow:0 4px 12px rgba(10,31,61,.25)}
+
+  .btn{display:inline-block;padding:12px 26px;border-radius:8px;font-weight:600;font-size:.88rem;transition:.4s;cursor:pointer;border:none;font-family:'Tajawal'}
+  html[lang="en"] .btn{font-family:'Inter'}
+  .btn-navy{background:var(--navy);color:var(--ivory);box-shadow:0 8px 24px rgba(10,31,61,.25)}
+  .btn-navy:hover{background:var(--navy-3);transform:translateY(-2px);box-shadow:0 12px 32px rgba(10,31,61,.35)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-3),var(--gold),var(--gold-2));color:var(--navy);box-shadow:0 8px 24px rgba(201,169,97,.4)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,169,97,.55)}
+  .btn-outline-light{background:transparent;color:var(--ivory);border:1.5px solid rgba(251,249,244,.5)}
+  .btn-outline-light:hover{background:var(--ivory);color:var(--navy);border-color:var(--ivory)}
+
+  .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer}
+
+  /* ===== الهيرو ===== */
+  .hero{position:relative;padding:100px 0 110px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+  .hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;filter:brightness(.35)}
+  .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(10,31,61,.9),rgba(18,47,87,.75))}
+  .hero-content{position:relative;z-index:2;width:100%;color:var(--ivory)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .hero-tag{display:inline-flex;align-items:center;gap:10px;padding:8px 20px;border-radius:30px;background:rgba(201,169,97,.15);border:1px solid rgba(201,169,97,.4);color:var(--gold-2);font-size:.82rem;margin-bottom:26px;letter-spacing:1px}
+  .hero-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:blink 1.8s infinite}
+  @keyframes blink{50%{opacity:.3}}
+  .hero h1{font-size:3.2rem;line-height:1.25;color:var(--ivory);margin-bottom:22px;font-weight:700}
+  .hero h1 .accent{background:linear-gradient(135deg,var(--gold-2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+  .hero-sub{font-size:1.05rem;color:rgba(251,249,244,.85);margin-bottom:36px;max-width:580px;line-height:2}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+  .hero-features{display:flex;gap:30px;flex-wrap:wrap;padding-top:32px;border-top:1px solid rgba(201,169,97,.25)}
+  .hero-feature{display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(251,249,244,.9)}
+  .hero-feature .check{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold-3),var(--gold-2));display:grid;place-items:center;color:var(--navy);font-size:.7rem;font-weight:900}
+
+  .hero-visual{background:rgba(251,249,244,.05);border:1px solid rgba(201,169,97,.25);border-radius:20px;padding:38px 32px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 40px 100px rgba(0,0,0,.4)}
+  .hero-visual h3{color:var(--gold-2);font-size:1.3rem;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+  .hero-visual ul{list-style:none;display:grid;gap:16px}
+  .hero-visual li{display:flex;align-items:flex-start;gap:12px;color:rgba(251,249,244,.9);font-size:.95rem;padding-bottom:16px;border-bottom:1px dashed rgba(201,169,97,.2)}
+  .hero-visual li:last-child{border:none;padding-bottom:0}
+
+  /* ===== الأقسام ===== */
+  section{padding:100px 0;position:relative}
+  .section-head{text-align:center;margin-bottom:70px;max-width:760px;margin-inline:auto}
+  .section-tag{display:inline-block;padding:6px 20px;background:var(--navy);color:var(--gold-2);border-radius:30px;font-size:.75rem;letter-spacing:3px;font-weight:600;margin-bottom:20px}
+  html[lang="en"] .section-tag{letter-spacing:2px}
+  .section-head h2{font-size:2.6rem;color:var(--navy);line-height:1.3;margin-bottom:16px}
+  .section-head h2 .accent{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .section-head p{color:var(--muted);font-size:1rem}
+
+  /* ===== عن المكتب ===== */
+  .about{background:var(--ivory-2)}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+  .about-visual{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;aspect-ratio:4/5}
+  .about-visual img{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .about-visual:hover img{transform:scale(1.05)}
+  .about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,31,61,.4))}
+  .about-text h3{font-size:2rem;color:var(--navy);margin-bottom:22px;line-height:1.4}
+  .about-text h3 span{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .about-text p{color:var(--text);margin-bottom:18px;font-size:1rem;line-height:2}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  .about-stat{background:var(--paper);border-radius:12px;padding:22px 16px;text-align:center;border-right:3px solid var(--gold);box-shadow:var(--shadow-sm);transition:.3s}
+  .about-stat:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .about-stat b{display:block;font-family:'Amiri';font-size:2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:6px}
+  .about-stat span{color:var(--muted);font-size:.82rem}
+
+  /* ===== القطاعات ===== */
+  .sectors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px}
+  .sector-card{background:var(--paper);border-radius:18px;padding:40px 32px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:.5s}
+  .sector-card::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:var(--sector-color,var(--gold));transform:scaleX(0);transform-origin:right;transition:.5s}
+  .sector-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:rgba(201,169,97,.3)}
+  .sector-card:hover::before{transform:scaleX(1)}
+  .sector-num{position:absolute;top:20px;left:26px;font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--sector-color,var(--gold));opacity:.15;line-height:1}
+  .sector-icon{width:70px;height:70px;border-radius:16px;background:linear-gradient(135deg,var(--sector-color,var(--navy)),color-mix(in srgb,var(--sector-color,var(--navy)) 60%,white));display:grid;place-items:center;font-size:1.8rem;color:#fff;margin-bottom:24px;box-shadow:0 12px 30px color-mix(in srgb,var(--sector-color,var(--navy)) 30%,transparent);transition:.5s}
+  .sector-card:hover .sector-icon{transform:rotate(-6deg) scale(1.08)}
+  .sector-card h3{font-size:1.25rem;color:var(--navy);margin-bottom:14px;line-height:1.4}
+  .sector-card p{color:var(--muted);font-size:.93rem;line-height:1.9;margin-bottom:20px}
+  .sector-list{list-style:none;display:grid;gap:8px}
+  .sector-list li{display:flex;align-items:flex-start;gap:8px;font-size:.88rem;color:var(--text)}
+  .sector-list li::before{content:'◆';color:var(--sector-color,var(--gold));font-size:.7rem;flex-shrink:0;line-height:2}
+  .sector-1{--sector-color:#1e4573}
+  .sector-2{--sector-color:#a8874a}
+  .sector-3{--sector-color:#1a6b52}
+  .sector-4{--sector-color:#8b1e3f}
+  .sector-5{--sector-color:#0d6b7a}
+  .sector-6{--sector-color:#5a3a7d}
+
+  /* ===== المؤسس ===== */
+  .founder{background:var(--ivory-2)}
+  .founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .founder-visual{position:relative}
+  .founder-img-box{
+    aspect-ratio:1;border-radius:20px;
+    box-shadow:var(--shadow-lg);position:relative;
+    background:linear-gradient(135deg,#fff,#fbf9f4);
+    display:grid;place-items:center;padding:40px;
+    border:1px solid var(--border);
+  }
+  .founder-img{
+    width:95%;height:auto;object-fit:contain;
+    filter:drop-shadow(0 15px 30px rgba(10,31,61,.15));
+  }
+  .founder-badge{position:absolute;bottom:-20px;left:-20px;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--ivory);padding:24px 30px;border-radius:16px;box-shadow:var(--shadow-lg);border:2px solid var(--gold);max-width:250px}
+  .founder-badge b{display:block;font-family:'Amiri';font-size:2rem;color:var(--gold-2);line-height:1;margin-bottom:4px}
+  .founder-badge span{font-size:.85rem;color:rgba(251,249,244,.85)}
+  .founder-text h2{font-size:2.4rem;color:var(--navy);line-height:1.3;margin-bottom:14px}
+  .founder-text .name-en{font-family:'Playfair Display',serif;color:var(--gold-3);font-size:1rem;letter-spacing:3px;margin-bottom:24px;display:block}
+  .founder-text p{color:var(--text);font-size:1rem;margin-bottom:18px;line-height:2}
+  .founder-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .f-badge{padding:8px 18px;border-radius:30px;background:rgba(10,31,61,.05);border:1px solid rgba(10,31,61,.12);color:var(--navy);font-size:.82rem;font-weight:500}
+
+  /* ===== لماذا نحن ===== */
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .why-card{background:var(--paper);border-radius:16px;padding:36px 28px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:.4s}
+  .why-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:var(--shadow-md)}
+  .why-icon{width:70px;height:70px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(135deg,rgba(10,31,61,.08),rgba(201,169,97,.08));border:1px solid rgba(201,169,97,.3);display:grid;place-items:center;font-size:1.6rem;transition:.4s}
+  .why-card:hover .why-icon{background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--gold-2);transform:scale(1.08) rotate(-6deg)}
+  .why-card h3{color:var(--navy);font-size:1.1rem;margin-bottom:10px}
+  .why-card p{color:var(--muted);font-size:.9rem;line-height:1.9}
+
+  /* ===== العدادات ===== */
+  .counters-section{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:var(--ivory);padding:80px 0;position:relative;overflow:hidden}
+  .counters-section::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 70%);border-radius:50%}
+  .counters-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative;z-index:2}
+  .counter{text-align:center;padding:20px;border-right:1px solid rgba(201,169,97,.2)}
+  .counter:last-child{border:none}
+  .counter b{display:block;font-family:'Amiri';font-size:3rem;font-weight:700;background:linear-gradient(135deg,var(--gold-2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:10px}
+  .counter span{font-size:.9rem;color:rgba(251,249,244,.8);letter-spacing:.5px}
+
+  /* ===== الحجز ===== */
+  .consultation{background:var(--ivory-2)}
+  .consult-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1100px;margin:0 auto}
+  .consult-text h2{font-size:2.4rem;color:var(--navy);line-height:1.3;margin-bottom:20px}
+  .consult-text h2 .accent{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .consult-text > p{color:var(--muted);font-size:1rem;margin-bottom:30px;line-height:2}
+  .consult-features{list-style:none;display:grid;gap:14px}
+  .consult-features li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--text)}
+  .consult-features li::before{content:'✦';color:var(--gold-3);font-size:1.1rem;flex-shrink:0;line-height:1.5}
+  .booking-wrapper{background:var(--paper);border-radius:20px;padding:50px 44px;box-shadow:var(--shadow-lg);border-top:4px solid var(--gold);position:relative}
+  .booking-wrapper::before{content:'⚖';position:absolute;top:20px;left:30px;font-size:3rem;opacity:.05}
+  .booking-header{text-align:center;margin-bottom:34px}
+  .booking-header h3{font-size:1.6rem;color:var(--navy);margin-bottom:8px}
+  .booking-header p{color:var(--muted);font-size:.9rem}
+  .form-group{margin-bottom:18px}
+  .form-group label{display:block;font-size:.88rem;color:var(--navy);font-weight:600;margin-bottom:8px}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;background:var(--ivory);border:1.5px solid rgba(10,31,61,.12);border-radius:10px;font-family:'Tajawal','Inter';font-size:.95rem;color:var(--text);transition:.3s}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold-3);background:#fff;box-shadow:0 0 0 4px rgba(201,169,97,.12)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-submit{width:100%;padding:16px;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--ivory);border:none;border-radius:10px;font-family:'Tajawal','Inter';font-size:1rem;font-weight:700;cursor:pointer;transition:.3s;margin-top:10px;letter-spacing:.5px}
+  .form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(10,31,61,.3)}
+  .form-success{display:none;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(10,31,61,.04),rgba(201,169,97,.08));border:1.5px solid var(--gold);border-radius:12px;margin-top:20px}
+  .form-success.show{display:block;animation:popIn .5s}
+  @keyframes popIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+  .form-success h4{color:var(--navy);font-size:1.1rem;margin-bottom:8px}
+  .form-success p{color:var(--muted);font-size:.88rem}
+
+  /* ===== آراء ===== */
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+  .testi-card{background:var(--paper);border-radius:16px;padding:36px 30px;box-shadow:var(--shadow-sm);border-top:3px solid var(--gold);position:relative;transition:.4s}
+  .testi-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .testi-card::before{content:'"';position:absolute;top:6px;right:24px;font-family:'Amiri';font-size:5rem;color:var(--gold);opacity:.25;line-height:1}
+  .testi-stars{color:var(--gold);font-size:.95rem;margin-bottom:16px;letter-spacing:2px}
+  .testi-card p{color:var(--text);font-size:.95rem;line-height:1.9;margin-bottom:22px;font-style:italic;position:relative;z-index:2}
+  .testi-author{display:flex;align-items:center;gap:14px}
+  .testi-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:grid;place-items:center;color:var(--gold-2);font-family:'Amiri';font-weight:700;font-size:1.1rem;flex-shrink:0}
+  .testi-info strong{color:var(--navy);font-size:.92rem;display:block}
+  .testi-info span{color:var(--muted);font-size:.78rem}
+
+  /* ===== FAQ ===== */
+  .faq{background:var(--ivory-2)}
+  .faq-list{max-width:820px;margin:0 auto;display:grid;gap:14px}
+  .faq-item{background:var(--paper);border-radius:12px;border:1px solid var(--border);overflow:hidden;transition:.3s}
+  .faq-item.open{border-color:var(--gold);box-shadow:var(--shadow-md)}
+  .faq-q{padding:22px 26px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;color:var(--navy);font-size:.98rem;font-family:'Tajawal','Inter'}
+  .faq-q .icon{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--gold-2);display:grid;place-items:center;font-size:1rem;flex-shrink:0;transition:.4s}
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);background:linear-gradient(135deg,var(--gold-3),var(--gold-2));color:var(--navy)}
+  .faq-a{max-height:0;overflow:hidden;transition:.5s;padding:0 26px;color:var(--muted);font-size:.92rem;line-height:1.9}
+  .faq-item.open .faq-a{max-height:400px;padding:0 26px 24px}
+
+  /* ===== التواصل ===== */
+  .contact{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:var(--ivory);position:relative;overflow:hidden}
+  .contact::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,169,97,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,97,.04) 1px,transparent 1px);background-size:80px 80px}
+  .contact .section-head{position:relative;z-index:2}
+  .contact .section-head h2{color:var(--ivory)}
+  .contact .section-head p{color:rgba(251,249,244,.75)}
+  .contact .section-head .section-tag{background:var(--gold);color:var(--navy)}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;position:relative;z-index:2;margin-bottom:50px}
+  .contact-card{background:rgba(251,249,244,.05);border:1px solid rgba(201,169,97,.25);border-radius:16px;padding:34px 24px;text-align:center;transition:.4s}
+  .contact-card:hover{background:rgba(251,249,244,.1);border-color:var(--gold);transform:translateY(-8px)}
+  .contact-card .icon{width:60px;height:60px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--gold-3),var(--gold-2));color:var(--navy);display:grid;place-items:center;font-size:1.4rem;box-shadow:0 12px 32px rgba(201,169,97,.35)}
+  .contact-card h4{color:var(--gold-2);font-size:1rem;margin-bottom:10px}
+  .contact-card a,.contact-card p{color:rgba(251,249,244,.9);font-size:.92rem;word-break:break-word;display:block;margin-bottom:6px;transition:.3s}
+  .contact-card a:hover{color:var(--gold-2)}
+  .map-box{border-radius:20px;overflow:hidden;border:1px solid rgba(201,169,97,.3);position:relative;z-index:2;box-shadow:var(--shadow-lg)}
+  .map-box iframe{width:100%;height:380px;border:0;filter:grayscale(.3) invert(.9) hue-rotate(180deg) contrast(.85)}
+
+  /* ===== الفوتر ===== */
+  footer{background:#051429;color:rgba(251,249,244,.65);padding:60px 0 30px}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-logo-img{
+    height:auto;width:100%;max-width:340px;
+    object-fit:contain;margin-bottom:20px;
+    background:#fff;padding:14px;border-radius:12px;
+    display:block;
+    filter:drop-shadow(0 10px 30px rgba(0,0,0,.4));
+  }
+  .footer-brand-block p{font-size:.88rem;line-height:1.9;margin-bottom:10px;color:rgba(251,249,244,.7)}
+  .footer-col h4{color:var(--gold-2);font-size:1rem;margin-bottom:16px;font-family:'Amiri','Playfair Display'}
+  .footer-col ul{list-style:none;display:grid;gap:10px}
+  .footer-col a{color:rgba(251,249,244,.7);font-size:.88rem;transition:.3s}
+  .footer-col a:hover{color:var(--gold-2);padding-right:4px}
+  .footer-bottom{border-top:1px solid rgba(201,169,97,.15);padding-top:24px;text-align:center;font-size:.82rem;color:rgba(251,249,244,.55)}
+  .footer-bottom .gold{color:var(--gold-2)}
+
+  /* ===== أزرار عائمة ===== */
+  .float-btn{position:fixed;bottom:28px;z-index:200;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 15px 40px rgba(0,0,0,.3);transition:.4s;color:#fff;border:none;cursor:pointer;font-size:1.4rem}
+  .float-btn:hover{transform:scale(1.12) rotate(8deg)}
+  .float-call{left:28px;background:linear-gradient(135deg,var(--navy),var(--navy-3));animation:ring 2.5s infinite}
+  @keyframes ring{0%,100%{box-shadow:0 15px 40px rgba(10,31,61,.4)}50%{box-shadow:0 15px 50px rgba(201,169,97,.5)}}
+  .float-top{right:28px;background:linear-gradient(135deg,var(--gold-3),var(--gold-2));color:var(--navy);font-weight:900;opacity:0;pointer-events:none}
+  .float-top.show{opacity:1;pointer-events:auto}
+  .float-top:hover{transform:translateY(-5px)}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:.9s cubic-bezier(.2,.8,.2,1)}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  html[lang="en"] body{direction:ltr;text-align:left}
+  html[lang="ar"] body{direction:rtl;text-align:right}
+
+  @media(max-width:900px){
+    .nav-links{display:none;position:absolute;top:100%;right:0;left:0;background:var(--ivory);flex-direction:column;padding:26px;gap:18px;box-shadow:var(--shadow-md);border-bottom:1px solid var(--border)}
+    .nav-links.open{display:flex}
+    .menu-toggle{display:block}
+    .nav .btn-navy{display:none}
+    .hero-grid,.about-grid,.founder-grid,.consult-wrapper{grid-template-columns:1fr;gap:50px}
+    .hero h1{font-size:2.3rem}
+    .hero{padding:70px 0 80px;min-height:auto}
+    .section-head h2{font-size:1.9rem}
+    .founder-text h2{font-size:1.9rem}
+    .consult-text h2{font-size:1.9rem}
+    section{padding:70px 0}
+    .about-stats{grid-template-columns:1fr 1fr}
+    .counters-grid{grid-template-columns:repeat(2,1fr)}
+    .counter{border:none;padding:10px}
+    .counter b{font-size:2.2rem}
+    .form-row{grid-template-columns:1fr}
+    .booking-wrapper{padding:36px 24px}
+    .founder-badge{bottom:-16px;left:-16px;padding:18px 22px}
+    .founder-badge b{font-size:1.5rem}
+    .footer-grid{grid-template-columns:1fr}
+    .lang-toggle{transform:scale(.9)}
+    .brand-logo-img{height:46px;max-width:160px}
+    .brand-name-ar{font-size:1rem}
+    .footer-logo-img{max-width:280px}
+  }
+  @media(max-width:450px){
+    .hero h1{font-size:1.8rem}
+    .brand-logo-img{height:40px;max-width:130px}
+    .brand-name-ar{font-size:.85rem}
+    .about-stats{grid-template-columns:1fr}
+    .section-head h2{font-size:1.6rem}
+    .footer-logo-img{max-width:240px}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- ===== الهيدر ===== -->
+<header id="header">
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <div class="brand-logo-block">
+        <span class="brand-name-ar" data-ar="سهاد امام" data-en="Sohad Emam">سهاد امام</span>
+        <img src="logo-symbol.jpg" alt="مكتب سهاد امام المحامي بالنقض ومعاونوه" class="brand-logo-img">
+      </div>
+    </a>
+
+    <button class="menu-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+
+    <ul class="nav-links" id="menu">
+      <li><a href="#about" data-ar="عن المكتب" data-en="About">عن المكتب</a></li>
+      <li><a href="#sectors" data-ar="القطاعات" data-en="Sectors">القطاعات</a></li>
+      <li><a href="#founder" data-ar="المؤسس" data-en="Founder">المؤسس</a></li>
+      <li><a href="#booking" data-ar="احجز استشارة" data-en="Book">احجز استشارة</a></li>
+      <li><a href="#faq" data-ar="أسئلة" data-en="FAQ">أسئلة</a></li>
+      <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ar" onclick="setLang('ar')">ع</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#booking" class="btn btn-navy" data-ar="احجز استشارة" data-en="Book Now">احجز استشارة</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== الهيرو ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">
+          <span class="dot"></span>
+          <span data-ar="خبرة أكثر من 30 عامًا في المحاماة" data-en="30+ Years of Legal Excellence">خبرة أكثر من 30 عامًا في المحاماة</span>
+        </div>
+        <h1 data-ar="مكتب سهاد امام المحامي بالنقض ومعاونوه — <span class='accent'>شركاء نجاحك القانوني</span>" data-en="Sohad Emam Law Firm — <span class='accent'>Your Legal Success Partners</span>">
+          مكتب سهاد امام المحامي بالنقض ومعاونوه — <span class="accent">شركاء نجاحك القانوني</span>
+        </h1>
+        <p class="hero-sub" data-ar="مكتب محاماة واستشارات قانونية متكامل، يضم نخبة من المحامين والمستشارين، ويقدم خدماته عبر 6 قطاعات متخصصة تخدم الأفراد والشركات داخل مصر وخارجها." data-en="A full-service law firm & legal consultancy, with a team of elite lawyers and consultants, offering services through 6 specialized sectors for individuals and corporations in Egypt and abroad.">
+          مكتب محاماة واستشارات قانونية متكامل، يضم نخبة من المحامين والمستشارين، ويقدم خدماته عبر 6 قطاعات متخصصة تخدم الأفراد والشركات داخل مصر وخارجها.
+        </p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-gold" data-ar="احجز استشارتك الآن" data-en="Book a Consultation">احجز استشارتك الآن</a>
+          <a href="#sectors" class="btn btn-outline-light" data-ar="استكشف قطاعاتنا" data-en="Explore Our Sectors">استكشف قطاعاتنا</a>
+        </div>
+        <div class="hero-features">
+          <div class="hero-feature"><span class="check">✓</span><span data-ar="10+ محامين ومستشارين" data-en="10+ Lawyers & Consultants">10+ محامين ومستشارين</span></div>
+          <div class="hero-feature"><span class="check">✓</span><span data-ar="6 قطاعات متخصصة" data-en="6 Specialized Sectors">6 قطاعات متخصصة</span></div>
+          <div class="hero-feature"><span class="check">✓</span><span data-ar="سرية تامة والتزام" data-en="Strict Confidentiality">سرية تامة والتزام</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <h3>⚖ <span data-ar="لماذا مكتبنا؟" data-en="Why Our Firm?">لماذا مكتبنا؟</span></h3>
+        <ul>
+          <li><span class="check">✓</span><span data-ar="خبرة قانونية تمتد لأكثر من 30 عامًا" data-en="Legal expertise extending over 30 years">خبرة قانونية تمتد لأكثر من 30 عامًا</span></li>
+          <li><span class="check">✓</span><span data-ar="فريق من 10 محامين ومستشارين متخصصين" data-en="Team of 10 specialized lawyers & consultants">فريق من 10 محامين ومستشارين متخصصين</span></li>
+          <li><span class="check">✓</span><span data-ar="6 قطاعات تخدم الشركات والأفراد" data-en="6 sectors serving corporations & individuals">6 قطاعات تخدم الشركات والأفراد</span></li>
+          <li><span class="check">✓</span><span data-ar="مقر مركزي في الدقي – الجيزة" data-en="Central office in Dokki – Giza">مقر مركزي في الدقي – الجيزة</span></li>
+          <li><span class="check">✓</span><span data-ar="حلول قانونية متكاملة تحت سقف واحد" data-en="Integrated legal solutions under one roof">حلول قانونية متكاملة تحت سقف واحد</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== عن المكتب ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="عن المكتب" data-en="About Us">عن المكتب</span>
+      <h2 data-ar="مكتب <span class='accent'>سهاد امام المحامي بالنقض ومعاونوه</span>" data-en="<span class='accent'>Sohad Emam</span> Law Firm">مكتب <span class="accent">سهاد امام المحامي بالنقض ومعاونوه</span></h2>
+      <p data-ar="مؤسسة قانونية متكاملة تجمع بين الخبرة والاحترافية" data-en="An integrated legal institution combining expertise and professionalism">مؤسسة قانونية متكاملة تجمع بين الخبرة والاحترافية</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Justice">
+      </div>
+      <div class="about-text reveal">
+        <h3 data-ar="تأسس المكتب وفقًا لقوانين <span>جمهورية مصر العربية</span>" data-en="Founded under the laws of the <span>Arab Republic of Egypt</span>">تأسس المكتب وفقًا لقوانين <span>جمهورية مصر العربية</span></h3>
+        <p data-ar="تأسس مكتب سهاد امام المحامي بالنقض ومعاونوه للمحاماة والاستشارات القانونية بخلفية عمل قانوني وخبرات عملية لمؤسسيه تمتد لأكثر من 30 عامًا، ويضم نخبة من المحامين والمستشارين القانونيين، فضلًا عن مستشارين يعملون بالمكتب بنظام بعض الوقت." data-en="Sohad Emam Law Firm was founded on a solid legal background and practical experience of its founders spanning over 30 years. The firm includes an elite team of lawyers and legal consultants, in addition to part-time consultants.">تأسس مكتب سهاد امام المحامي بالنقض ومعاونوه للمحاماة والاستشارات القانونية بخلفية عمل قانوني وخبرات عملية لمؤسسيه تمتد لأكثر من 30 عامًا، ويضم نخبة من المحامين والمستشارين القانونيين، فضلًا عن مستشارين يعملون بالمكتب بنظام بعض الوقت.</p>
+        <p data-ar="يقدم المكتب كافة أعمال المحاماة والاستشارات القانونية، إضافة إلى خدمات الاستعلام وتحصيل الديون، عبر 6 قطاعات متخصصة تخدم الأفراد والشركات." data-en="The firm provides all legal practice and consultancy services, in addition to investigation and debt collection services, across 6 specialized sectors serving individuals and corporations.">يقدم المكتب كافة أعمال المحاماة والاستشارات القانونية، إضافة إلى خدمات الاستعلام وتحصيل الديون، عبر 6 قطاعات متخصصة تخدم الأفراد والشركات.</p>
+        <div class="about-stats">
+          <div class="about-stat"><b>+30</b><span data-ar="سنة خبرة" data-en="Years Experience">سنة خبرة</span></div>
+          <div class="about-stat"><b>10</b><span data-ar="محامين ومستشارين" data-en="Lawyers & Consultants">محامين ومستشارين</span></div>
+          <div class="about-stat"><b>6</b><span data-ar="قطاعات متخصصة" data-en="Specialized Sectors">قطاعات متخصصة</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== القطاعات ===== -->
+<section id="sectors">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="قطاعاتنا" data-en="Our Sectors">قطاعاتنا</span>
+      <h2 data-ar="6 قطاعات <span class='accent'>متكاملة</span> تحت سقف واحد" data-en="6 <span class='accent'>Integrated Sectors</span> Under One Roof">6 قطاعات <span class="accent">متكاملة</span> تحت سقف واحد</h2>
+      <p data-ar="من الترافع إلى تأسيس الشركات والاستعلام والتحصيل — نغطي كل احتياجاتك القانونية" data-en="From litigation to corporate setup, investigation and collection — we cover all your legal needs">من الترافع إلى تأسيس الشركات والاستعلام والتحصيل — نغطي كل احتياجاتك القانونية</p>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector-card sector-1 reveal">
+        <span class="sector-num">01</span><div class="sector-icon">⚖️</div>
+        <h3 data-ar="قطاع المحاماة والترافع" data-en="Legal Practice & Litigation">قطاع المحاماة والترافع</h3>
+        <p data-ar="الترافع أمام جميع المحاكم والجهات القضائية بمختلف درجاتها." data-en="Representation before all courts and judicial bodies at all levels.">الترافع أمام جميع المحاكم والجهات القضائية بمختلف درجاتها.</p>
+        <ul class="sector-list">
+          <li data-ar="القضايا المدنية والجنائية" data-en="Civil & criminal cases">القضايا المدنية والجنائية</li>
+          <li data-ar="الطعون بالنقض والإدارية العليا" data-en="Cassation & administrative appeals">الطعون بالنقض والإدارية العليا</li>
+          <li data-ar="النزاعات التجارية والعقارية" data-en="Commercial & real estate disputes">النزاعات التجارية والعقارية</li>
+        </ul>
+      </div>
+      <div class="sector-card sector-2 reveal">
+        <span class="sector-num">02</span><div class="sector-icon">📊</div>
+        <h3 data-ar="الاستشارات القانونية والاقتصادية" data-en="Legal & Economic Consulting">الاستشارات القانونية والاقتصادية</h3>
+        <p data-ar="استشارات قانونية واقتصادية وتسويقية للشركات والأفراد." data-en="Legal, economic and marketing consultancy for corporations and individuals.">استشارات قانونية واقتصادية وتسويقية للشركات والأفراد.</p>
+        <ul class="sector-list">
+          <li data-ar="استشارات قانونية متخصصة" data-en="Specialized legal consultancy">استشارات قانونية متخصصة</li>
+          <li data-ar="الدراسات الاقتصادية للمشروعات" data-en="Economic feasibility studies">الدراسات الاقتصادية للمشروعات</li>
+          <li data-ar="الاستشارات التسويقية" data-en="Marketing consultancy">الاستشارات التسويقية</li>
+        </ul>
+      </div>
+      <div class="sector-card sector-3 reveal">
+        <span class="sector-num">03</span><div class="sector-icon">🏢</div>
+        <h3 data-ar="قطاع تأسيس الشركات" data-en="Company Formation">قطاع تأسيس الشركات</h3>
+        <p data-ar="تأسيس الشركات بجميع أنواعها واختيار الشكل القانوني المناسب." data-en="Formation of all types of companies and choosing the right legal structure.">تأسيس الشركات بجميع أنواعها واختيار الشكل القانوني المناسب.</p>
+        <ul class="sector-list">
+          <li data-ar="تأسيس شركات الأموال والأشخاص" data-en="Corporations & partnerships">تأسيس شركات الأموال والأشخاص</li>
+          <li data-ar="هيكلة الشركات وإعادة التنظيم" data-en="Corporate restructuring">هيكلة الشركات وإعادة التنظيم</li>
+          <li data-ar="عقود الشركاء واللوائح الداخلية" data-en="Shareholders' agreements & bylaws">عقود الشركاء واللوائح الداخلية</li>
+        </ul>
+      </div>
+      <div class="sector-card sector-4 reveal">
+        <span class="sector-num">04</span><div class="sector-icon">🔍</div>
+        <h3 data-ar="قطاع الاستعلام والتحصيل" data-en="Investigation & Collection">قطاع الاستعلام والتحصيل</h3>
+        <p data-ar="خدمات الاستعلام القانوني وتحصيل الديون بطرق قانونية." data-en="Legal investigation services and debt collection through legal channels.">خدمات الاستعلام القانوني وتحصيل الديون بطرق قانونية.</p>
+        <ul class="sector-list">
+          <li data-ar="الاستعلام عن الأشخاص والشركات" data-en="Individual & corporate investigation">الاستعلام عن الأشخاص والشركات</li>
+          <li data-ar="تحصيل الديون المستحقة" data-en="Debt collection services">تحصيل الديون المستحقة</li>
+          <li data-ar="التتبع القانوني للأصول" data-en="Legal asset tracing">التتبع القانوني للأصول</li>
+        </ul>
+      </div>
+      <div class="sector-card sector-5 reveal">
+        <span class="sector-num">05</span><div class="sector-icon">🏘️</div>
+        <h3 data-ar="قطاع إدارة العقارات" data-en="Real Estate Management">قطاع إدارة العقارات</h3>
+        <p data-ar="إدارة وتطوير العقارات والاستشارات العقارية." data-en="Real estate management, development and consultancy.">إدارة وتطوير العقارات والاستشارات العقارية.</p>
+        <ul class="sector-list">
+          <li data-ar="إدارة الأملاك والعقارات" data-en="Property management">إدارة الأملاك والعقارات</li>
+          <li data-ar="الاستشارات العقارية" data-en="Real estate consultancy">الاستشارات العقارية</li>
+          <li data-ar="عقود البيع والإيجار" data-en="Sale & lease contracts">عقود البيع والإيجار</li>
+        </ul>
+      </div>
+      <div class="sector-card sector-6 reveal">
+        <span class="sector-num">06</span><div class="sector-icon">📜</div>
+        <h3 data-ar="قطاع الشهر والتوثيق" data-en="Notarization & Registration">قطاع الشهر والتوثيق</h3>
+        <p data-ar="خدمات التوثيق والشهر العقاري والتسجيل بكل أنواعه." data-en="Notarization, real estate registration and documentation services.">خدمات التوثيق والشهر العقاري والتسجيل بكل أنواعه.</p>
+        <ul class="sector-list">
+          <li data-ar="الشهر العقاري والتسجيل" data-en="Real estate notarization">الشهر العقاري والتسجيل</li>
+          <li data-ar="توثيق العقود والوكالات" data-en="Contract & PoA notarization">توثيق العقود والوكالات</li>
+          <li data-ar="التوقيعات الرسمية" data-en="Official attestations">التوقيعات الرسمية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== المؤسس ===== -->
+<section class="founder" id="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-visual reveal">
+        <div class="founder-img-box">
+          <img src="logo-symbol.jpg" alt="مكتب سهاد امام" class="founder-img">
+        </div>
+        <div class="founder-badge">
+          <b>+30</b>
+          <span data-ar="سنة من الخبرة القانونية" data-en="Years of Legal Expertise">سنة من الخبرة القانونية</span>
+        </div>
+      </div>
+      <div class="founder-text reveal">
+        <span class="section-tag" data-ar="المؤسس" data-en="Founder">المؤسس</span>
+        <h2 data-ar="المحامي / سهاد امام" data-en="Sohad Emam">المحامي / سهاد امام</h2>
+        <span class="name-en">SOHAD EMAM · ATTORNEY AT LAW</span>
+        <p data-ar="محامٍ مصري بالنقض والإدارية العليا، ومؤسس مكتب سهاد امام المحامي بالنقض ومعاونوه. يمتلك خبرة قانونية تمتد لأكثر من 30 عامًا في القضايا المدنية والجنائية والنزاعات القانونية بمختلف أنواعها." data-en="Egyptian attorney admitted before the Court of Cassation and Supreme Administrative Court, and founder of Sohad Emam Law Firm. He has over 30 years of legal expertise in civil, criminal and various types of legal disputes.">محامٍ مصري بالنقض والإدارية العليا، ومؤسس مكتب سهاد امام المحامي بالنقض ومعاونوه. يمتلك خبرة قانونية تمتد لأكثر من 30 عامًا في القضايا المدنية والجنائية والنزاعات القانونية بمختلف أنواعها.</p>
+        <p data-ar="يقود المكتب برؤية تجمع بين الأصالة القانونية والحلول العصرية، ويشرف على فريق من المحامين والمستشارين المتخصصين، لتقديم خدمة قانونية متميزة تحفظ حقوق العملاء." data-en="He leads the firm with a vision combining legal tradition and modern solutions, supervising a team of specialized lawyers and consultants to deliver distinctive legal services that protect clients' rights.">يقود المكتب برؤية تجمع بين الأصالة القانونية والحلول العصرية، ويشرف على فريق من المحامين والمستشارين المتخصصين، لتقديم خدمة قانونية متميزة تحفظ حقوق العملاء.</p>
+        <div class="founder-badges">
+          <span class="f-badge" data-ar="⚖️ محامي بالنقض" data-en="⚖️ Court of Cassation">⚖️ محامي بالنقض</span>
+          <span class="f-badge" data-ar="🏛️ الإدارية العليا" data-en="🏛️ Supreme Administrative">🏛️ الإدارية العليا</span>
+          <span class="f-badge" data-ar="📜 خبرة +30 عامًا" data-en="📜 30+ Years Experience">📜 خبرة +30 عامًا</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== لماذا نحن ===== -->
+<section id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</span>
+      <h2 data-ar="لأن نجاحك <span class='accent'>مسؤوليتنا</span>" data-en="Because your success is <span class='accent'>our responsibility</span>">لأن نجاحك <span class="accent">مسؤوليتنا</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">🏆</div><h3 data-ar="خبرة تمتد +30 عامًا" data-en="30+ Years Experience">خبرة تمتد +30 عامًا</h3><p data-ar="ثلاثة عقود من الممارسة القانونية الفعلية في مختلف القضايا." data-en="Three decades of actual legal practice across various cases.">ثلاثة عقود من الممارسة القانونية الفعلية في مختلف القضايا.</p></div>
+      <div class="why-card reveal"><div class="why-icon">👥</div><h3 data-ar="فريق متكامل من 10+ متخصصين" data-en="Team of 10+ Specialists">فريق متكامل من 10+ متخصصين</h3><p data-ar="نخبة من المحامين والمستشارين في تخصصات قانونية متنوعة." data-en="Elite lawyers and consultants across diverse legal specializations.">نخبة من المحامين والمستشارين في تخصصات قانونية متنوعة.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🎯</div><h3 data-ar="6 قطاعات متكاملة" data-en="6 Integrated Sectors">6 قطاعات متكاملة</h3><p data-ar="حلول قانونية شاملة تحت سقف واحد لجميع احتياجاتك." data-en="Comprehensive legal solutions under one roof for all your needs.">حلول قانونية شاملة تحت سقف واحد لجميع احتياجاتك.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🔒</div><h3 data-ar="سرية تامة" data-en="Absolute Confidentiality">سرية تامة</h3><p data-ar="خصوصية الموكل ومستنداته خط أحمر لا نتجاوزه." data-en="Client privacy and documents are an inviolable red line.">خصوصية الموكل ومستنداته خط أحمر لا نتجاوزه.</p></div>
+      <div class="why-card reveal"><div class="why-icon">📍</div><h3 data-ar="مقر مركزي في الدقي" data-en="Central Office in Dokki">مقر مركزي في الدقي</h3><p data-ar="موقع استراتيجي في قلب الجيزة يسهل الوصول إليه." data-en="Strategic location in the heart of Giza, easily accessible.">موقع استراتيجي في قلب الجيزة يسهل الوصول إليه.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🌍</div><h3 data-ar="خدمات داخل وخارج مصر" data-en="Services in & outside Egypt">خدمات داخل وخارج مصر</h3><p data-ar="نخدم عملاءنا داخل مصر وخارجها بأعلى معايير المهنية." data-en="Serving clients inside and outside Egypt at the highest professional standards.">نخدم عملاءنا داخل مصر وخارجها بأعلى معايير المهنية.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== العدادات ===== -->
+<section class="counters-section">
+  <div class="container">
+    <div class="counters-grid">
+      <div class="counter"><b data-count="30">0</b><span data-ar="سنة خبرة" data-en="Years of Experience">سنة خبرة</span></div>
+      <div class="counter"><b data-count="10">0</b><span data-ar="محامين ومستشارين" data-en="Lawyers & Consultants">محامين ومستشارين</span></div>
+      <div class="counter"><b data-count="6">0</b><span data-ar="قطاعات متخصصة" data-en="Specialized Sectors">قطاعات متخصصة</span></div>
+      <div class="counter"><b data-count="1000">0</b><span data-ar="+ قضية وعميل" data-en="+ Cases & Clients">+ قضية وعميل</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الحجز ===== -->
+<section class="consultation" id="booking">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="احجز استشارتك" data-en="Book a Consultation">احجز استشارتك</span>
+      <h2 data-ar="استشارة قانونية <span class='accent'>متخصصة</span>" data-en="Specialized <span class='accent'>Legal Consultation</span>">استشارة قانونية <span class="accent">متخصصة</span></h2>
+      <p data-ar="املأ البيانات وسيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم" data-en="Fill the form and we will contact you to confirm the appointment and pricing details">املأ البيانات وسيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم</p>
+    </div>
+    <div class="consult-wrapper">
+      <div class="consult-text reveal">
+        <h2 data-ar="نقدم لك <span class='accent'>استشارة قانونية شاملة</span>" data-en="We provide <span class='accent'>comprehensive legal consultation</span>">نقدم لك <span class="accent">استشارة قانونية شاملة</span></h2>
+        <p data-ar="سواء كنت فردًا أو شركة، نقدم لك استشارة قانونية متكاملة تشمل تحليل الموقف وتقديم التوصيات المناسبة. تواصل معنا لمعرفة تفاصيل الرسوم." data-en="Whether you're an individual or a corporation, we offer a comprehensive legal consultation including case analysis and appropriate recommendations. Contact us for pricing details.">سواء كنت فردًا أو شركة، نقدم لك استشارة قانونية متكاملة تشمل تحليل الموقف وتقديم التوصيات المناسبة. تواصل معنا لمعرفة تفاصيل الرسوم.</p>
+        <ul class="consult-features">
+          <li data-ar="جلسة استشارية مباشرة مع المحامي المختص" data-en="Direct consultation with the specialized lawyer">جلسة استشارية مباشرة مع المحامي المختص</li>
+          <li data-ar="تحليل شامل للموقف القانوني" data-en="Comprehensive legal situation analysis">تحليل شامل للموقف القانوني</li>
+          <li data-ar="توصيات واضحة قابلة للتنفيذ" data-en="Clear & actionable recommendations">توصيات واضحة قابلة للتنفيذ</li>
+          <li data-ar="مراجعة المستندات والأوراق" data-en="Review of documents & paperwork">مراجعة المستندات والأوراق</li>
+          <li data-ar="سرية تامة لكل التفاصيل" data-en="Full confidentiality of all details">سرية تامة لكل التفاصيل</li>
+          <li data-ar="الرسوم: تواصل معنا للتفاصيل" data-en="Fees: Contact us for details">الرسوم: تواصل معنا للتفاصيل</li>
+        </ul>
+      </div>
+      <div class="booking-wrapper reveal">
+        <div class="booking-header">
+          <h3 data-ar="📅 احجز موعدك الآن" data-en="📅 Book Your Appointment">📅 احجز موعدك الآن</h3>
+          <p data-ar="جميع البيانات تُعامل بسرية تامة" data-en="All data is treated with strict confidentiality">جميع البيانات تُعامل بسرية تامة</p>
+        </div>
+        <form id="bookForm" onsubmit="handleBooking(event)">
+          <div class="form-group">
+            <label data-ar="الاسم الكامل *" data-en="Full Name *">الاسم الكامل *</label>
+            <input type="text" name="name" required data-ar-placeholder="اسمك الكريم" data-en-placeholder="Your full name" placeholder="اسمك الكريم">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-ar="رقم الموبايل *" data-en="Mobile *">رقم الموبايل *</label>
+              <input type="tel" name="phone" required placeholder="01xxxxxxxxx" dir="ltr">
+            </div>
+            <div class="form-group">
+              <label data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+              <input type="email" name="email" placeholder="example@email.com" dir="ltr">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-ar="القطاع *" data-en="Sector *">القطاع *</label>
+              <select name="sector" required>
+                <option value="" data-ar="اختر القطاع" data-en="Select sector">اختر القطاع</option>
+                <option data-ar="المحاماة والترافع" data-en="Legal Practice">المحاماة والترافع</option>
+                <option data-ar="الاستشارات القانونية والاقتصادية" data-en="Legal & Economic Consulting">الاستشارات القانونية والاقتصادية</option>
+                <option data-ar="تأسيس الشركات" data-en="Company Formation">تأسيس الشركات</option>
+                <option data-ar="الاستعلام والتحصيل" data-en="Investigation & Collection">الاستعلام والتحصيل</option>
+                <option data-ar="إدارة العقارات" data-en="Real Estate Management">إدارة العقارات</option>
+                <option data-ar="الشهر والتوثيق" data-en="Notarization & Registration">الشهر والتوثيق</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-ar="نوع العميل *" data-en="Client Type *">نوع العميل *</label>
+              <select name="clientType" required>
+                <option value="" data-ar="اختر" data-en="Select">اختر</option>
+                <option data-ar="فرد" data-en="Individual">فرد</option>
+                <option data-ar="شركة" data-en="Corporation">شركة</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-ar="التاريخ المفضل *" data-en="Preferred Date *">التاريخ المفضل *</label>
+              <input type="date" name="date" required>
+            </div>
+            <div class="form-group">
+              <label data-ar="الوقت المفضل *" data-en="Preferred Time *">الوقت المفضل *</label>
+              <select name="time" required>
+                <option value="" data-ar="اختر" data-en="Select">اختر</option>
+                <option>10:00</option><option>11:00</option><option>12:00</option>
+                <option>13:00</option><option>14:00</option><option>15:00</option>
+                <option>16:00</option><option>17:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label>
+            <textarea name="notes" rows="3" data-ar-placeholder="أي تفاصيل مهمة عن موضوع الاستشارة" data-en-placeholder="Any important details about your consultation" placeholder="أي تفاصيل مهمة عن موضوع الاستشارة"></textarea>
+          </div>
+          <button type="submit" class="form-submit" data-ar="تأكيد الحجز" data-en="Confirm Booking">تأكيد الحجز</button>
+        </form>
+        <div class="form-success" id="bookSuccess">
+          <h4 data-ar="✅ تم استلام طلب الحجز" data-en="✅ Booking Request Received">✅ تم استلام طلب الحجز</h4>
+          <p data-ar="سيتم التواصل معك في أقرب وقت لتأكيد الموعد وبيان تفاصيل الرسوم." data-en="We will contact you shortly to confirm the appointment and pricing details.">سيتم التواصل معك في أقرب وقت لتأكيد الموعد وبيان تفاصيل الرسوم.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== آراء العملاء ===== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="آراء عملائنا" data-en="Testimonials">آراء عملائنا</span>
+      <h2 data-ar="ثقة <span class='accent'>تُبنى</span> على النتائج" data-en="Trust <span class='accent'>built</span> on results">ثقة <span class="accent">تُبنى</span> على النتائج</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p data-ar="تعامل راقٍ واحترافية عالية، ومتابعة دقيقة لكل تفاصيل القضية. أنصح بالتعامل معهم بشدة." data-en="Elegant handling and high professionalism, with meticulous follow-up. Highly recommended.">تعامل راقٍ واحترافية عالية، ومتابعة دقيقة لكل تفاصيل القضية. أنصح بالتعامل معهم بشدة.</p>
+        <div class="testi-author"><div class="testi-avatar">أ</div><div class="testi-info"><strong data-ar="أحمد م." data-en="Ahmed M.">أحمد م.</strong><span data-ar="قضية مدنية" data-en="Civil Case">قضية مدنية</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p data-ar="ساعدوني في تأسيس شركتي بسرعة واحترافية. الفريق محترف ومتعاون جدًا." data-en="Helped me establish my company quickly and professionally. Very cooperative and professional team.">ساعدوني في تأسيس شركتي بسرعة واحترافية. الفريق محترف ومتعاون جدًا.</p>
+        <div class="testi-author"><div class="testi-avatar">س</div><div class="testi-info"><strong data-ar="سارة ع." data-en="Sara A.">سارة ع.</strong><span data-ar="تأسيس شركة" data-en="Company Formation">تأسيس شركة</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p data-ar="خبرة واضحة في القضايا الإدارية، ومتابعة دقيقة. تجربة احترافية من أول اتصال." data-en="Clear expertise in administrative cases and precise follow-up. Professional experience from the first call.">خبرة واضحة في القضايا الإدارية، ومتابعة دقيقة. تجربة احترافية من أول اتصال.</p>
+        <div class="testi-author"><div class="testi-avatar">م</div><div class="testi-info"><strong data-ar="محمود ح." data-en="Mahmoud H.">محمود ح.</strong><span data-ar="قضية إدارية" data-en="Administrative Case">قضية إدارية</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</span>
+      <h2 data-ar="إجابات على <span class='accent'>أكثر الأسئلة</span>" data-en="Answers to <span class='accent'>common questions</span>">إجابات على <span class="accent">أكثر الأسئلة</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <span data-ar="ما هي مجالات عمل المكتب؟" data-en="What are the firm's practice areas?">ما هي مجالات عمل المكتب؟</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-a" data-ar="نعمل من خلال 6 قطاعات متخصصة: المحاماة والترافع، الاستشارات القانونية والاقتصادية، تأسيس الشركات، الاستعلام والتحصيل، إدارة العقارات، والشهر والتوثيق." data-en="We operate through 6 specialized sectors: Legal Practice & Litigation, Legal & Economic Consulting, Company Formation, Investigation & Collection, Real Estate Management, and Notarization & Registration.">نعمل من خلال 6 قطاعات متخصصة: المحاماة والترافع، الاستشارات القانونية والاقتصادية، تأسيس الشركات، الاستعلام والتحصيل، إدارة العقارات، والشهر والتوثيق.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <span data-ar="كيف أحجز استشارة؟" data-en="How do I book a consultation?">كيف أحجز استشارة؟</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-a" data-ar="يمكنك حجز استشارتك من خلال نموذج الحجز في الموقع، أو بالتواصل المباشر مع المكتب خلال ساعات العمل. سيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم." data-en="You can book through the online booking form, or contact us directly during working hours. We will contact you to confirm the appointment and pricing details.">يمكنك حجز استشارتك من خلال نموذج الحجز في الموقع، أو بالتواصل المباشر مع المكتب خلال ساعات العمل. سيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <span data-ar="هل تقدمون خدمات للشركات؟" data-en="Do you provide services to corporations?">هل تقدمون خدمات للشركات؟</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-a" data-ar="نعم، نقدم خدمات متكاملة للشركات تشمل التأسيس، الهيكلة، العقود، المنازعات التجارية، والاستشارات القانونية والاقتصادية." data-en="Yes, we offer integrated services to corporations including formation, restructuring, contracts, commercial disputes, and legal & economic consultancy.">نعم، نقدم خدمات متكاملة للشركات تشمل التأسيس، الهيكلة، العقود، المنازعات التجارية، والاستشارات القانونية والاقتصادية.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <span data-ar="هل المعلومات التي أشاركها سرية؟" data-en="Is my information confidential?">هل المعلومات التي أشاركها سرية؟</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-a" data-ar="بالتأكيد، السرية التامة مبدأ أساسي في عملنا، وجميع بيانات الموكلين ومستنداتهم محفوظة بسرية مطلقة ولا يتم مشاركتها مع أي طرف ثالث." data-en="Absolutely. Full confidentiality is a core principle of our practice. All client data and documents are kept strictly confidential and never shared with third parties.">بالتأكيد، السرية التامة مبدأ أساسي في عملنا، وجميع بيانات الموكلين ومستنداتهم محفوظة بسرية مطلقة ولا يتم مشاركتها مع أي طرف ثالث.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <span data-ar="أين يقع المكتب؟" data-en="Where is the office located?">أين يقع المكتب؟</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-a" data-ar="المكتب يقع في 9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة — موقع مركزي يسهل الوصول إليه من جميع أنحاء القاهرة الكبرى." data-en="The office is located at 9 El-Nahda Street, off Michel Bakhoum Street, Dokki, Giza — a central location easily accessible from all over Greater Cairo.">المكتب يقع في 9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة — موقع مركزي يسهل الوصول إليه من جميع أنحاء القاهرة الكبرى.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== التواصل ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+      <h2 data-ar="نحن في <span class='accent'>خدمتك</span>" data-en="We are at your <span class='accent'>service</span>">نحن في <span class="accent">خدمتك</span></h2>
+      <p data-ar="تواصل معنا بالطريقة التي تناسبك" data-en="Reach us the way that suits you">تواصل معنا بالطريقة التي تناسبك</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal"><div class="icon">📍</div><h4 data-ar="العنوان" data-en="Address">العنوان</h4><p data-ar="9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة" data-en="9 El-Nahda St., off Michel Bakhoum St., Dokki, Giza">9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة</p></div>
+      <div class="contact-card reveal"><div class="icon">⏰</div><h4 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h4><p data-ar="السبت - الخميس" data-en="Saturday - Thursday">السبت - الخميس</p><p data-ar="10:00 ص - 6:00 م" data-en="10:00 AM - 6:00 PM">10:00 ص - 6:00 م</p></div>
+      <div class="contact-card reveal"><div class="icon">⚖️</div><h4 data-ar="التخصص" data-en="Specialization">التخصص</h4><p data-ar="النقض والإدارية العليا" data-en="Cassation & Supreme Administrative">النقض والإدارية العليا</p><p data-ar="6 قطاعات قانونية متكاملة" data-en="6 Integrated Legal Sectors">6 قطاعات قانونية متكاملة</p></div>
+      <div class="contact-card reveal"><div class="icon">📅</div><h4 data-ar="احجز الآن" data-en="Book Now">احجز الآن</h4><p data-ar="يفضل حجز الموعد مسبقًا" data-en="Advance booking is preferred">يفضل حجز الموعد مسبقًا</p><a href="#booking" data-ar="نموذج الحجز ←" data-en="Booking Form ←">نموذج الحجز ←</a></div>
+    </div>
+    <div class="map-box reveal">
+      <iframe src="https://www.bing.com/maps/embed?v=2&cp=30.0384~31.2123&lvl=15&style=r&q=9+El-Nahda+Street+Dokki+Giza" loading="lazy" title="Location"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الفوتر ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-block">
+        <img src="logo-full.jpg" alt="مكتب سهاد امام المحامي بالنقض ومعاونوه" class="footer-logo-img">
+        <p data-ar="مؤسسة قانونية متكاملة تجمع بين الخبرة والاحترافية، ونقدم خدماتنا عبر 6 قطاعات متخصصة للأفراد والشركات." data-en="An integrated legal institution combining expertise and professionalism, offering services through 6 specialized sectors for individuals and corporations.">مؤسسة قانونية متكاملة تجمع بين الخبرة والاحترافية، ونقدم خدماتنا عبر 6 قطاعات متخصصة للأفراد والشركات.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <ul>
+          <li><a href="#about" data-ar="عن المكتب" data-en="About">عن المكتب</a></li>
+          <li><a href="#sectors" data-ar="القطاعات" data-en="Sectors">القطاعات</a></li>
+          <li><a href="#founder" data-ar="المؤسس" data-en="Founder">المؤسس</a></li>
+          <li><a href="#booking" data-ar="احجز استشارة" data-en="Book Consultation">احجز استشارة</a></li>
+          <li><a href="#faq" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-ar="تواصل" data-en="Contact">تواصل</h4>
+        <ul>
+          <li><span data-ar="9 شارع النهضة، الدقي، الجيزة" data-en="9 El-Nahda St., Dokki, Giza">9 شارع النهضة، الدقي، الجيزة</span></li>
+          <li><span data-ar="السبت - الخميس: 10 ص - 6 م" data-en="Sat - Thu: 10 AM - 6 PM">السبت - الخميس: 10 ص - 6 م</span></li>
+          <li><a href="#booking" data-ar="احجز موعدك" data-en="Book your appointment">احجز موعدك</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> <span class="gold" data-ar="مكتب سهاد امام المحامي بالنقض ومعاونوه" data-en="Sohad Emam Law Firm">مكتب سهاد امام المحامي بالنقض ومعاونوه</span> — <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved">جميع الحقوق محفوظة</span></p>
+    </div>
+  </div>
+</footer>
+
+<a href="#booking" class="float-btn float-call" title="Book">📅</a>
+<button class="float-btn float-top" id="backTop" title="Top">↑</button>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-ar]').forEach(el=>{
+      const arText = el.getAttribute('data-ar');
+      const enText = el.getAttribute('data-en');
+      if(lang === 'ar' && arText !== null) el.innerHTML = arText;
+      else if(lang === 'en' && enText !== null) el.innerHTML = enText;
+    });
+    document.querySelectorAll('[data-ar-placeholder]').forEach(el=>{
+      const arPh = el.getAttribute('data-ar-placeholder');
+      const enPh = el.getAttribute('data-en-placeholder');
+      el.placeholder = lang === 'ar' ? arPh : enPh;
+    });
+    document.querySelectorAll('.lang-btn').forEach(b=>{
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    localStorage.setItem('lang', lang);
+  }
+
+  const savedLang = localStorage.getItem('lang') || 'ar';
+  if(savedLang !== 'ar') setLang(savedLang);
+
+  document.querySelectorAll('#menu a').forEach(a=>{
+    a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open'));
+  });
+
+  const header = document.getElementById('header');
+  const backTop = document.getElementById('backTop');
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll',()=>{
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 40);
+    backTop.classList.toggle('show', y > 500);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (y/h*100) + '%';
+  });
+  backTop.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const counterIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el = e.target;
+        const target = +el.dataset.count;
+        let n = 0;
+        const step = target/60;
+        const timer = setInterval(()=>{
+          n += step;
+          if(n >= target){n = target; clearInterval(timer);}
+          el.textContent = Math.floor(n) + '+';
+        },25);
+        counterIO.unobserve(el);
+      }
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el=>counterIO.observe(el));
+
+  function handleBooking(e){
+    e.preventDefault();
+    document.getElementById('bookSuccess').classList.add('show');
+    e.target.reset();
+    setTimeout(()=>{
+      document.getElementById('bookSuccess').scrollIntoView({behavior:'smooth',block:'center'});
+    },100);
+  }
+</script>
+</body>
+</html>
