@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +21,34 @@
     --shadow-md:0 12px 40px rgba(10,31,61,.1);
     --shadow-lg:0 30px 80px rgba(10,31,61,.15);
   }
+
+  /* الوضع الليلي */
+  html[data-theme="dark"]{
+    --navy:#e8e8e8;--navy-2:#d0d0d0;--navy-3:#b0b0b0;
+    --gold:#d4b872;--gold-2:#e8d4a0;--gold-3:#c9a961;
+    --ivory:#0f1724;--ivory-2:#1a2332;
+    --text:#e0e0e0;--muted:#a0a0a0;--paper:#1e2a3a;
+    --border:rgba(255,255,255,.1);
+  }
+  html[data-theme="dark"] body{background:var(--ivory);color:var(--text)}
+  html[data-theme="dark"] header{background:rgba(15,23,36,.92)}
+  html[data-theme="dark"] header.scrolled{background:rgba(15,23,36,.98)}
+  html[data-theme="dark"] .sector-card,
+  html[data-theme="dark"] .why-card,
+  html[data-theme="dark"] .testi-card,
+  html[data-theme="dark"] .faq-item,
+  html[data-theme="dark"] .booking-wrapper{background:var(--paper);border-color:var(--border)}
+  html[data-theme="dark"] .form-group input,
+  html[data-theme="dark"] .form-group select,
+  html[data-theme="dark"] .form-group textarea{background:var(--ivory-2);color:var(--text);border-color:var(--border)}
+  html[data-theme="dark"] .hero-overlay{background:linear-gradient(135deg,rgba(5,15,30,.95),rgba(10,25,45,.88))}
+  html[data-theme="dark"] .counters-section{background:linear-gradient(135deg,#051429,#0a1f3d)}
+  html[data-theme="dark"] .contact{background:linear-gradient(135deg,#051429,#0a1f3d)}
+  html[data-theme="dark"] footer{background:#020a14}
+
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Tajawal','Inter',sans-serif;background:var(--ivory);color:var(--text);line-height:1.9;overflow-x:hidden}
+  body{font-family:'Tajawal','Inter',sans-serif;background:var(--ivory);color:var(--text);line-height:1.9;overflow-x:hidden;transition:background .3s,color .3s}
   html[lang="en"] body{font-family:'Inter','Tajawal',sans-serif;line-height:1.7}
   h1,h2,h3,h4{font-family:'Amiri','Playfair Display',serif;font-weight:700}
   html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4{font-family:'Playfair Display',serif}
@@ -53,6 +78,8 @@
   .lang-btn{padding:6px 14px;border-radius:30px;font-size:.78rem;font-weight:600;border:none;background:transparent;cursor:pointer;color:var(--navy);transition:.3s;font-family:'Tajawal'}
   html[lang="en"] .lang-btn{font-family:'Inter'}
   .lang-btn.active{background:var(--navy);color:var(--ivory);box-shadow:0 4px 12px rgba(10,31,61,.25)}
+  .theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--paper);color:var(--navy);cursor:pointer;display:grid;place-items:center;font-size:1.1rem;transition:.3s}
+  .theme-toggle:hover{background:var(--ivory-2);transform:scale(1.08)}
   .btn{display:inline-block;padding:12px 26px;border-radius:8px;font-weight:600;font-size:.88rem;transition:.4s;cursor:pointer;border:none;font-family:'Tajawal'}
   html[lang="en"] .btn{font-family:'Inter'}
   .btn-navy{background:var(--navy);color:var(--ivory);box-shadow:0 8px 24px rgba(10,31,61,.25)}
@@ -242,7 +269,7 @@
   .contact .section-head h2{color:var(--ivory)}
   .contact .section-head p{color:rgba(251,249,244,.75)}
   .contact .section-head .section-tag{background:var(--gold);color:var(--navy)}
-  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;position:relative;z-index:2;margin-bottom:50px}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;position:relative;z-index:2;margin-bottom:50px}
   .contact-card{background:rgba(251,249,244,.05);border:1px solid rgba(201,169,97,.25);border-radius:16px;padding:34px 24px;text-align:center;transition:.4s}
   .contact-card:hover{background:rgba(251,249,244,.1);border-color:var(--gold);transform:translateY(-8px)}
   .contact-card .icon{width:60px;height:60px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--gold-3),var(--gold-2));color:var(--navy);display:grid;place-items:center;font-size:1.4rem;box-shadow:0 12px 32px rgba(201,169,97,.35)}
@@ -250,7 +277,13 @@
   .contact-card a,.contact-card p{color:rgba(251,249,244,.9);font-size:.92rem;word-break:break-word;display:block;margin-bottom:6px;transition:.3s}
   .contact-card a:hover{color:var(--gold-2)}
   .map-box{border-radius:20px;overflow:hidden;border:1px solid rgba(201,169,97,.3);position:relative;z-index:2;box-shadow:var(--shadow-lg)}
-  .map-box iframe{width:100%;height:380px;border:0;filter:grayscale(.3) invert(.9) hue-rotate(180deg) contrast(.85)}
+  .map-box iframe{width:100%;height:380px;border:0}
+
+  /* قسم أخبار الفيسبوك */
+  .fb-news{background:var(--ivory-2);padding:80px 0}
+  .fb-news-inner{max-width:600px;margin:0 auto;text-align:center}
+  .fb-news-inner .fb-page{margin:0 auto;display:inline-block;text-align:left}
+  .fb-note{font-size:.82rem;color:var(--muted);margin-top:16px;line-height:1.8}
 
   footer{background:#051429;color:rgba(251,249,244,.65);padding:60px 0 30px}
   .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
@@ -265,8 +298,8 @@
 
   .float-btn{position:fixed;bottom:28px;z-index:200;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 15px 40px rgba(0,0,0,.3);transition:.4s;color:#fff;border:none;cursor:pointer;font-size:1.4rem}
   .float-btn:hover{transform:scale(1.12) rotate(8deg)}
-  .float-call{left:28px;background:linear-gradient(135deg,var(--navy),var(--navy-3));animation:ring 2.5s infinite}
-  @keyframes ring{0%,100%{box-shadow:0 15px 40px rgba(10,31,61,.4)}50%{box-shadow:0 15px 50px rgba(201,169,97,.5)}}
+  .float-whatsapp{left:28px;background:linear-gradient(135deg,#25D366,#128C7E);animation:ring 2.5s infinite}
+  @keyframes ring{0%,100%{box-shadow:0 15px 40px rgba(37,211,102,.45)}50%{box-shadow:0 15px 55px rgba(37,211,102,.65)}}
   .float-top{right:28px;background:linear-gradient(135deg,var(--gold-3),var(--gold-2));color:var(--navy);font-weight:900;opacity:0;pointer-events:none}
   .float-top.show{opacity:1;pointer-events:auto}
   .float-top:hover{transform:translateY(-5px)}
@@ -322,6 +355,11 @@
 
 <div id="progress"></div>
 
+<!-- تحميل Facebook SDK مرة واحدة -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v19.0"></script>
+
 <header id="header">
   <div class="container nav">
     <a href="#top" class="brand">
@@ -339,6 +377,7 @@
       <li><a href="#founder" data-ar="المؤسس" data-en="Founder">المؤسس</a></li>
       <li><a href="#gallery" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
       <li><a href="#booking" data-ar="احجز استشارة" data-en="Book">احجز استشارة</a></li>
+      <li><a href="#fb-news" data-ar="أخبارنا" data-en="News">أخبارنا</a></li>
       <li><a href="#faq" data-ar="أسئلة" data-en="FAQ">أسئلة</a></li>
       <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
     </ul>
@@ -348,6 +387,7 @@
         <button class="lang-btn active" data-lang="ar" onclick="setLang('ar')">ع</button>
         <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
       </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">🌙</button>
       <a href="#booking" class="btn btn-navy" data-ar="احجز استشارة" data-en="Book Now">احجز استشارة</a>
     </div>
   </div>
@@ -566,7 +606,7 @@
     <div class="section-head reveal">
       <span class="section-tag" data-ar="احجز استشارتك" data-en="Book a Consultation">احجز استشارتك</span>
       <h2 data-ar="استشارة قانونية <span class='accent'>متخصصة</span>" data-en="Specialized <span class='accent'>Legal Consultation</span>">استشارة قانونية <span class="accent">متخصصة</span></h2>
-      <p data-ar="املأ البيانات وسيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم" data-en="Fill the form and we will contact you to confirm the appointment and pricing details">املأ البيانات وسيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم</p>
+      <p data-ar="املأ البيانات وسيتم تحويلك إلى واتساب لتأكيد الحجز" data-en="Fill the form and you will be redirected to WhatsApp to confirm">املأ البيانات وسيتم تحويلك إلى واتساب لتأكيد الحجز</p>
     </div>
     <div class="consult-wrapper">
       <div class="consult-visual reveal">
@@ -587,7 +627,7 @@
       <div class="booking-wrapper reveal">
         <div class="booking-header">
           <h3 data-ar="📅 احجز موعدك الآن" data-en="📅 Book Your Appointment">📅 احجز موعدك الآن</h3>
-          <p data-ar="جميع البيانات تُعامل بسرية تامة" data-en="All data is treated with strict confidentiality">جميع البيانات تُعامل بسرية تامة</p>
+          <p data-ar="سيتم تحويلك إلى واتساب مباشرة بعد الضغط على الزر" data-en="You will be redirected to WhatsApp immediately after clicking">سيتم تحويلك إلى واتساب مباشرة بعد الضغط على الزر</p>
         </div>
         <form id="bookForm" onsubmit="handleBooking(event)">
           <div class="form-group">
@@ -609,20 +649,20 @@
               <label data-ar="القطاع *" data-en="Sector *">القطاع *</label>
               <select name="sector" required>
                 <option value="" data-ar="اختر القطاع" data-en="Select sector">اختر القطاع</option>
-                <option data-ar="المحاماة والترافع" data-en="Legal Practice">المحاماة والترافع</option>
-                <option data-ar="الاستشارات القانونية والاقتصادية" data-en="Legal & Economic Consulting">الاستشارات القانونية والاقتصادية</option>
-                <option data-ar="تأسيس الشركات" data-en="Company Formation">تأسيس الشركات</option>
-                <option data-ar="الاستعلام والتحصيل" data-en="Investigation & Collection">الاستعلام والتحصيل</option>
-                <option data-ar="إدارة العقارات" data-en="Real Estate Management">إدارة العقارات</option>
-                <option data-ar="الشهر والتوثيق" data-en="Notarization & Registration">الشهر والتوثيق</option>
+                <option value="litigation" data-ar="المحاماة والترافع" data-en="Legal Practice">المحاماة والترافع</option>
+                <option value="consulting" data-ar="الاستشارات القانونية والاقتصادية" data-en="Legal & Economic Consulting">الاستشارات القانونية والاقتصادية</option>
+                <option value="company" data-ar="تأسيس الشركات" data-en="Company Formation">تأسيس الشركات</option>
+                <option value="collection" data-ar="الاستعلام والتحصيل" data-en="Investigation & Collection">الاستعلام والتحصيل</option>
+                <option value="realestate" data-ar="إدارة العقارات" data-en="Real Estate Management">إدارة العقارات</option>
+                <option value="notary" data-ar="الشهر والتوثيق" data-en="Notarization & Registration">الشهر والتوثيق</option>
               </select>
             </div>
             <div class="form-group">
               <label data-ar="نوع العميل *" data-en="Client Type *">نوع العميل *</label>
               <select name="clientType" required>
                 <option value="" data-ar="اختر" data-en="Select">اختر</option>
-                <option data-ar="فرد" data-en="Individual">فرد</option>
-                <option data-ar="شركة" data-en="Corporation">شركة</option>
+                <option value="individual" data-ar="فرد" data-en="Individual">فرد</option>
+                <option value="corporate" data-ar="شركة" data-en="Corporation">شركة</option>
               </select>
             </div>
           </div>
@@ -645,11 +685,11 @@
             <label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label>
             <textarea name="notes" rows="3" data-ar-placeholder="أي تفاصيل مهمة عن موضوع الاستشارة" data-en-placeholder="Any important details about your consultation" placeholder="أي تفاصيل مهمة عن موضوع الاستشارة"></textarea>
           </div>
-          <button type="submit" class="form-submit" data-ar="تأكيد الحجز" data-en="Confirm Booking">تأكيد الحجز</button>
+          <button type="submit" class="form-submit" data-ar="تأكيد الحجز عبر واتساب" data-en="Confirm via WhatsApp">تأكيد الحجز عبر واتساب</button>
         </form>
-        <div class="form-success" id="bookSuccess">
-          <h4 data-ar="✅ تم استلام طلب الحجز" data-en="✅ Booking Request Received">✅ تم استلام طلب الحجز</h4>
-          <p data-ar="سيتم التواصل معك في أقرب وقت لتأكيد الموعد وبيان تفاصيل الرسوم." data-en="We will contact you shortly to confirm the appointment and pricing details.">سيتم التواصل معك في أقرب وقت لتأكيد الموعد وبيان تفاصيل الرسوم.</p>
+        <div class="form-success" id="bookSuccess" style="display:none">
+          <h4 data-ar="✅ تم فتح واتساب" data-en="✅ WhatsApp Opened">✅ تم فتح واتساب</h4>
+          <p data-ar="إذا لم يفتح واتساب تلقائيًا، اضغط على الرابط الذي ظهر لك." data-en="If WhatsApp didn't open automatically, click the link that appeared.">إذا لم يفتح واتساب تلقائيًا، اضغط على الرابط الذي ظهر لك.</p>
         </div>
       </div>
     </div>
@@ -682,6 +722,32 @@
   </div>
 </section>
 
+<!-- قسم أخبار الفيسبوك -->
+<section class="fb-news" id="fb-news">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" data-ar="آخر الأخبار" data-en="Latest News">آخر الأخبار</span>
+      <h2 data-ar="تابع <span class='accent'>مستجداتنا</span>" data-en="Follow <span class='accent'>our updates</span>">تابع <span class="accent">مستجداتنا</span></h2>
+      <p data-ar="آخر المنشورات من صفحة المكتب على فيسبوك" data-en="Latest posts from our Facebook page">آخر المنشورات من صفحة المكتب على فيسبوك</p>
+    </div>
+    <div class="fb-news-inner reveal">
+      <div class="fb-page"
+           data-href="https://www.facebook.com/sohademam"
+           data-tabs="timeline"
+           data-width="500"
+           data-small-header="false"
+           data-adapt-container-width="true"
+           data-hide-cover="false"
+           data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/sohademam" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/sohademam">مكتب سهاد امام المحامي بالنقض ومعاونوه</a>
+        </blockquote>
+      </div>
+      <p class="fb-note" data-ar="ملاحظة: هذا التضمين يستخدم Page Plugin الرسمي من فيسبوك. إذا ظهرت منطقة المنشورات فارغة، فهذا بسبب قيود حديثة من فيسبوك على عرض التايم لاين. الحل البديل يتطلب توكن Page Access Token وسيرفر خلفي." data-en="Note: This uses Facebook's official Page Plugin. If the timeline area appears blank, it is due to recent Facebook restrictions on timeline rendering. The alternative requires a Page Access Token and a backend server.">ملاحظة: هذا التضمين يستخدم Page Plugin الرسمي من فيسبوك. إذا ظهرت منطقة المنشورات فارغة، فهذا بسبب قيود حديثة من فيسبوك على عرض التايم لاين. الحل البديل يتطلب توكن Page Access Token وسيرفر خلفي.</p>
+    </div>
+  </div>
+</section>
+
 <section class="faq" id="faq">
   <div class="container">
     <div class="section-head reveal">
@@ -701,7 +767,7 @@
           <span data-ar="كيف أحجز استشارة؟" data-en="How do I book a consultation?">كيف أحجز استشارة؟</span>
           <span class="icon">+</span>
         </div>
-        <div class="faq-a" data-ar="يمكنك حجز استشارتك من خلال نموذج الحجز في الموقع، أو بالتواصل المباشر مع المكتب خلال ساعات العمل. سيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم." data-en="You can book through the online booking form, or contact us directly during working hours. We will contact you to confirm the appointment and pricing details.">يمكنك حجز استشارتك من خلال نموذج الحجز في الموقع، أو بالتواصل المباشر مع المكتب خلال ساعات العمل. سيتم التواصل معك لتأكيد الموعد وبيان تفاصيل الرسوم.</div>
+        <div class="faq-a" data-ar="يمكنك حجز استشارتك من خلال نموذج الحجز في الموقع، وسيتم تحويلك مباشرة إلى واتساب لإرسال بياناتك وتأكيد الموعد." data-en="You can book through the online form, and you will be redirected to WhatsApp to send your details and confirm the appointment.">يمكنك حجز استشارتك من خلال نموذج الحجز في الموقع، وسيتم تحويلك مباشرة إلى واتساب لإرسال بياناتك وتأكيد الموعد.</div>
       </div>
       <div class="faq-item reveal">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
@@ -722,7 +788,7 @@
           <span data-ar="أين يقع المكتب؟" data-en="Where is the office located?">أين يقع المكتب؟</span>
           <span class="icon">+</span>
         </div>
-        <div class="faq-a" data-ar="المكتب يقع في 9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة — موقع مركزي يسهل الوصول إليه من جميع أنحاء القاهرة الكبرى." data-en="The office is located at 9 El-Nahda Street, off Michel Bakhoum Street, Dokki, Giza — a central location easily accessible from all over Greater Cairo.">المكتب يقع في 9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة — موقع مركزي يسهل الوصول إليه من جميع أنحاء القاهرة الكبرى.</div>
+        <div class="faq-a" data-ar="المكتب يقع في 9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة — موقع مركزي يسهل الوصول إليه من جميع أنحاء القاهرة الكبرى." data-en="The office is located at 9 Elnahda Street, Dokki, Giza, Egypt — a central location easily accessible from all over Greater Cairo.">المكتب يقع في 9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة — موقع مركزي يسهل الوصول إليه من جميع أنحاء القاهرة الكبرى.</div>
       </div>
     </div>
   </div>
@@ -736,13 +802,27 @@
       <p data-ar="تواصل معنا بالطريقة التي تناسبك" data-en="Reach us the way that suits you">تواصل معنا بالطريقة التي تناسبك</p>
     </div>
     <div class="contact-grid">
-      <div class="contact-card reveal"><div class="icon">📍</div><h4 data-ar="العنوان" data-en="Address">العنوان</h4><p data-ar="9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة" data-en="9 El-Nahda St., off Michel Bakhoum St., Dokki, Giza">9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة</p></div>
+      <div class="contact-card reveal"><div class="icon">📍</div><h4 data-ar="العنوان" data-en="Address">العنوان</h4><p data-ar="9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة" data-en="9 Elnahda Street, Dokki, Giza, Egypt">9 شارع النهضة، متفرع من شارع ميشيل باخوم، الدقي، الجيزة</p></div>
+
+      <div class="contact-card reveal">
+        <div class="icon">📞</div>
+        <h4 data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</h4>
+        <a href="tel:+201555373955" dir="ltr">01555373955</a>
+        <a href="https://wa.me/201555373955" target="_blank" rel="noopener" data-ar="واتساب ←" data-en="WhatsApp ←">واتساب ←</a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="icon">✉️</div>
+        <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
+        <a href="mailto:sohad_emam@yahoo.com" dir="ltr">sohad_emam@yahoo.com</a>
+      </div>
+
       <div class="contact-card reveal"><div class="icon">⏰</div><h4 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h4><p data-ar="السبت - الخميس" data-en="Saturday - Thursday">السبت - الخميس</p><p data-ar="10:00 ص - 6:00 م" data-en="10:00 AM - 6:00 PM">10:00 ص - 6:00 م</p></div>
       <div class="contact-card reveal"><div class="icon">⚖️</div><h4 data-ar="التخصص" data-en="Specialization">التخصص</h4><p data-ar="النقض والإدارية العليا" data-en="Cassation & Supreme Administrative">النقض والإدارية العليا</p><p data-ar="6 قطاعات قانونية متكاملة" data-en="6 Integrated Legal Sectors">6 قطاعات قانونية متكاملة</p></div>
       <div class="contact-card reveal"><div class="icon">📅</div><h4 data-ar="احجز الآن" data-en="Book Now">احجز الآن</h4><p data-ar="يفضل حجز الموعد مسبقًا" data-en="Advance booking is preferred">يفضل حجز الموعد مسبقًا</p><a href="#booking" data-ar="نموذج الحجز ←" data-en="Booking Form ←">نموذج الحجز ←</a></div>
     </div>
     <div class="map-box reveal">
-      <iframe src="https://www.bing.com/maps/embed?v=2&cp=30.0384~31.2123&lvl=15&style=r&q=9+El-Nahda+Street+Dokki+Giza" loading="lazy" title="Location"></iframe>
+      <iframe src="https://maps.google.com/maps?q=9%20El%20Nahda%20Street%2C%20Dokki%2C%20Giza%2C%20Egypt&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" title="موقع المكتب على الخريطة"></iframe>
     </div>
   </div>
 </section>
@@ -762,13 +842,16 @@
           <li><a href="#founder" data-ar="المؤسس" data-en="Founder">المؤسس</a></li>
           <li><a href="#gallery" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
           <li><a href="#booking" data-ar="احجز استشارة" data-en="Book Consultation">احجز استشارة</a></li>
+          <li><a href="#fb-news" data-ar="أخبارنا" data-en="News">أخبارنا</a></li>
           <li><a href="#faq" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4 data-ar="تواصل" data-en="Contact">تواصل</h4>
         <ul>
-          <li><span data-ar="9 شارع النهضة، الدقي، الجيزة" data-en="9 El-Nahda St., Dokki, Giza">9 شارع النهضة، الدقي، الجيزة</span></li>
+          <li><span data-ar="9 شارع النهضة، الدقي، الجيزة" data-en="9 Elnahda Street, Dokki, Giza, Egypt">9 شارع النهضة، الدقي، الجيزة</span></li>
+          <li><a href="tel:+201555373955" dir="ltr">01555373955</a></li>
+          <li><a href="mailto:sohad_emam@yahoo.com" dir="ltr">sohad_emam@yahoo.com</a></li>
           <li><span data-ar="السبت - الخميس: 10 ص - 6 م" data-en="Sat - Thu: 10 AM - 6 PM">السبت - الخميس: 10 ص - 6 م</span></li>
           <li><a href="#booking" data-ar="احجز موعدك" data-en="Book your appointment">احجز موعدك</a></li>
         </ul>
@@ -780,12 +863,30 @@
   </div>
 </footer>
 
-<a href="#booking" class="float-btn float-call" title="Book">📅</a>
+<a href="https://wa.me/201555373955" target="_blank" rel="noopener"
+   class="float-btn float-whatsapp" title="WhatsApp" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 <button class="float-btn float-top" id="backTop" title="Top">↑</button>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ========== الوضع الليلي/النهاري ========== */
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', next);
+  });
+
+  /* ========== تبديل اللغة ========== */
   function setLang(lang){
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -850,13 +951,47 @@
   },{threshold:.5});
   document.querySelectorAll('[data-count]').forEach(el=>counterIO.observe(el));
 
+  /* ========== الحجز عبر واتساب ========== */
   function handleBooking(e){
     e.preventDefault();
-    document.getElementById('bookSuccess').classList.add('show');
-    e.target.reset();
-    setTimeout(()=>{
-      document.getElementById('bookSuccess').scrollIntoView({behavior:'smooth',block:'center'});
-    },100);
+    const form = e.target;
+    const data = new FormData(form);
+
+    const name = (data.get('name') || '').trim();
+    const phone = (data.get('phone') || '').trim();
+    const email = (data.get('email') || '').trim();
+    const sectorSelect = form.querySelector('select[name="sector"]');
+    const sectorText = sectorSelect.options[sectorSelect.selectedIndex].text;
+    const clientSelect = form.querySelector('select[name="clientType"]');
+    const clientText = clientSelect.options[clientSelect.selectedIndex].text;
+    const date = data.get('date') || '';
+    const time = data.get('time') || '';
+    const notes = (data.get('notes') || '').trim();
+
+    const messageLines = [
+      '📋 *طلب حجز استشارة جديد*',
+      '',
+      '👤 *الاسم:* ' + name,
+      '📱 *الموبايل:* ' + phone,
+    ];
+    if (email) messageLines.push('✉️ *الإيميل:* ' + email);
+    messageLines.push(
+      '⚖️ *القطاع:* ' + sectorText,
+      '👥 *نوع العميل:* ' + clientText,
+      '📅 *التاريخ:* ' + date,
+      '⏰ *الوقت:* ' + time
+    );
+    if (notes) messageLines.push('📝 *ملاحظات:* ' + notes);
+
+    const message = messageLines.join('\n');
+    const whatsappURL = 'https://wa.me/201555373955?text=' + encodeURIComponent(message);
+
+    window.open(whatsappURL, '_blank');
+
+    const success = document.getElementById('bookSuccess');
+    success.style.display = 'block';
+    success.scrollIntoView({behavior:'smooth', block:'center'});
+    form.reset();
   }
 </script>
 </body>
