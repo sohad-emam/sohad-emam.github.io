@@ -10,6 +10,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;900&family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- Preload لأهم صورة (الهيرو) لتحسين الأداء -->
+<link rel="preload" as="image" href="hero.png">
+
 <style>
   :root{
     --navy:#0a1f3d;--navy-2:#122f57;--navy-3:#1e4573;
@@ -22,7 +25,6 @@
     --shadow-lg:0 30px 80px rgba(10,31,61,.15);
   }
 
-  /* الوضع الليلي */
   html[data-theme="dark"]{
     --navy:#e8e8e8;--navy-2:#d0d0d0;--navy-3:#b0b0b0;
     --gold:#d4b872;--gold-2:#e8d4a0;--gold-3:#c9a961;
@@ -91,7 +93,7 @@
   .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer}
 
   .hero{position:relative;padding:100px 0 110px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
-  .hero-bg{position:absolute;inset:0;z-index:0;background-image:url('office.png');background-size:cover;background-position:center;filter:brightness(.4) blur(1px);transform:scale(1.05)}
+  .hero-bg{position:absolute;inset:0;z-index:0;background-color:var(--navy);background-image:url('office.png');background-size:cover;background-position:center;filter:brightness(.4) blur(1px);transform:scale(1.05)}
   .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(10,31,61,.92),rgba(18,47,87,.8))}
   .hero-content{position:relative;z-index:2;width:100%;color:var(--ivory)}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
@@ -111,10 +113,14 @@
     box-shadow:0 40px 100px rgba(0,0,0,.5);
     border:3px solid rgba(201,169,97,.4);
     aspect-ratio:4/5;max-width:420px;margin-right:auto;
-    background:var(--navy);
+    background:linear-gradient(135deg,var(--navy),var(--navy-3));
   }
-  .hero-photo-card img{width:100%;height:100%;object-fit:cover;transition:.6s}
-  .hero-photo-card:hover img{transform:scale(1.05)}
+  .hero-photo-card img{
+    width:100%;height:100%;object-fit:cover;
+    object-position:center top;        /* ✅ يحافظ على الوجه كامل */
+    transition:transform .6s;
+  }
+  .hero-photo-card:hover img{transform:scale(1.03)}
   .hero-photo-card::after{
     content:'';position:absolute;inset:0;
     background:linear-gradient(180deg,transparent 50%,rgba(10,31,61,.7));
@@ -137,10 +143,18 @@
 
   .about{background:var(--ivory-2)}
   .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
-  .about-visual{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;aspect-ratio:4/5;border:3px solid #fff}
-  .about-visual img{width:100%;height:100%;object-fit:cover;transition:.6s}
-  .about-visual:hover img{transform:scale(1.05)}
-  .about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,31,61,.5))}
+  .about-visual{
+    border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);
+    position:relative;aspect-ratio:4/5;border:3px solid #fff;
+    background:linear-gradient(135deg,var(--navy),var(--navy-3));
+  }
+  .about-visual img{
+    width:100%;height:100%;object-fit:cover;
+    object-position:center 25%;       /* ✅ يحافظ على الوجه مع القليل من الخلفية */
+    transition:transform .6s;
+  }
+  .about-visual:hover img{transform:scale(1.03)}
+  .about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,31,61,.5));pointer-events:none}
   .about-text h3{font-size:2rem;color:var(--navy);margin-bottom:22px;line-height:1.4}
   .about-text h3 span{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
   .about-text p{color:var(--text);margin-bottom:18px;font-size:1rem;line-height:2}
@@ -173,9 +187,14 @@
     aspect-ratio:4/5;border-radius:20px;overflow:hidden;
     box-shadow:var(--shadow-lg);position:relative;
     border:4px solid #fff;
+    background:linear-gradient(135deg,var(--navy),var(--navy-3));
   }
-  .founder-photo img{width:100%;height:100%;object-fit:cover;transition:.6s}
-  .founder-photo:hover img{transform:scale(1.05)}
+  .founder-photo img{
+    width:100%;height:100%;object-fit:cover;
+    object-position:center top;        /* ✅ الوجه كامل */
+    transition:transform .6s;
+  }
+  .founder-photo:hover img{transform:scale(1.03)}
   .founder-badge{position:absolute;bottom:-20px;left:-20px;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--ivory);padding:24px 30px;border-radius:16px;box-shadow:var(--shadow-lg);border:2px solid var(--gold);max-width:230px;z-index:3}
   .founder-badge b{display:block;font-family:'Amiri';font-size:2rem;color:var(--gold-2);line-height:1;margin-bottom:4px}
   .founder-badge span{font-size:.85rem;color:rgba(251,249,244,.85)}
@@ -185,18 +204,95 @@
   .founder-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
   .f-badge{padding:8px 18px;border-radius:30px;background:rgba(10,31,61,.05);border:1px solid rgba(10,31,61,.12);color:var(--navy);font-size:.82rem;font-weight:500}
 
-  .gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;grid-auto-rows:200px}
-  .gallery-item{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:.4s;position:relative;background:var(--navy)}
-  .gallery-item:nth-child(1){grid-column:span 3;grid-row:span 2}
-  .gallery-item:nth-child(2){grid-column:span 3;grid-row:span 1}
-  .gallery-item:nth-child(3){grid-column:span 3;grid-row:span 1}
-  .gallery-item:nth-child(4){grid-column:span 3;grid-row:span 2}
-  .gallery-item:nth-child(5){grid-column:span 3;grid-row:span 2}
-  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.6s}
-  .gallery-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);z-index:2}
-  .gallery-item:hover img{transform:scale(1.08)}
-  .gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,31,61,.4));opacity:0;transition:.4s;pointer-events:none}
+  /* ===== معرض الصور (محسّن) ===== */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    grid-auto-rows:210px;
+  }
+  .gallery-item{
+    border-radius:16px;overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    cursor:pointer;transition:transform .4s,box-shadow .4s;
+    position:relative;
+    background:linear-gradient(135deg,var(--navy),var(--navy-3));
+  }
+  /* التخطيط: صورة كبيرة (2x2) + صورتين مكدسة (2x1) + صورتين كبيرتين (2x2) */
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .gallery-item:nth-child(2){grid-column:span 2;grid-row:span 1}
+  .gallery-item:nth-child(3){grid-column:span 2;grid-row:span 1}
+  .gallery-item:nth-child(4){grid-column:span 2;grid-row:span 2}
+  .gallery-item:nth-child(5){grid-column:span 2;grid-row:span 2}
+
+  .gallery-item img{
+    width:100%;height:100%;object-fit:cover;
+    object-position:center 20%;        /* ✅ الوجه أعلى من المنتصف */
+    transition:transform .6s;
+  }
+  .gallery-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);z-index:2}
+  .gallery-item:hover img{transform:scale(1.04)}
+
+  /* أيقونة تكبير على الهوفر */
+  .gallery-item::before{
+    content:'🔍';
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%) scale(.4);
+    width:52px;height:52px;
+    border-radius:50%;
+    background:rgba(201,169,97,.95);
+    color:var(--navy);
+    display:grid;place-items:center;
+    font-size:1.2rem;
+    opacity:0;
+    transition:opacity .3s,transform .3s;
+    z-index:3;
+    pointer-events:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+  }
+  .gallery-item:hover::before{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  .gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,31,61,.55));opacity:0;transition:.4s;pointer-events:none;z-index:1}
   .gallery-item:hover::after{opacity:1}
+
+  /* ===== لايت بوكس ===== */
+  .lightbox{
+    position:fixed;inset:0;
+    background:rgba(5,15,30,.96);
+    display:flex;align-items:center;justify-content:center;
+    z-index:9999;padding:40px;
+    opacity:0;visibility:hidden;
+    transition:opacity .3s,visibility .3s;
+    backdrop-filter:blur(10px);
+  }
+  .lightbox.open{opacity:1;visibility:visible}
+  .lightbox img{
+    max-width:90vw;max-height:85vh;
+    width:auto;height:auto;
+    object-fit:contain;
+    border-radius:12px;
+    box-shadow:0 40px 100px rgba(0,0,0,.6);
+    transform:scale(.9);
+    transition:transform .3s;
+    background:#0a1f3d;
+  }
+  .lightbox.open img{transform:scale(1)}
+  .lightbox-close{
+    position:absolute;top:24px;left:24px;
+    width:48px;height:48px;border-radius:50%;
+    background:var(--gold);color:var(--navy);
+    border:none;font-size:1.5rem;font-weight:700;
+    cursor:pointer;display:grid;place-items:center;
+    transition:.3s;z-index:2;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+  }
+  .lightbox-close:hover{transform:scale(1.1) rotate(90deg)}
+  .lightbox-caption{
+    position:absolute;bottom:24px;right:24px;left:24px;
+    text-align:center;color:var(--gold-2);
+    font-family:'Amiri',serif;font-size:1.15rem;
+    pointer-events:none;
+  }
 
   .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
   .why-card{background:var(--paper);border-radius:16px;padding:36px 28px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:.4s}
@@ -216,8 +312,15 @@
 
   .consultation{background:var(--ivory-2)}
   .consult-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1100px;margin:0 auto}
-  .consult-visual{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:3px solid #fff;aspect-ratio:4/5;max-width:400px;margin:0 auto}
-  .consult-visual img{width:100%;height:100%;object-fit:cover}
+  .consult-visual{
+    border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);
+    border:3px solid #fff;aspect-ratio:4/5;max-width:400px;margin:0 auto;
+    background:linear-gradient(135deg,var(--navy),var(--navy-3));
+  }
+  .consult-visual img{
+    width:100%;height:100%;object-fit:cover;
+    object-position:center top;        /* ✅ الوجه كامل */
+  }
   .consult-text h2{font-size:2.2rem;color:var(--navy);line-height:1.3;margin-bottom:20px}
   .consult-text h2 .accent{background:linear-gradient(135deg,var(--gold-3),var(--gold-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
   .consult-text > p{color:var(--muted);font-size:1rem;margin-bottom:30px;line-height:2}
@@ -279,7 +382,6 @@
   .map-box{border-radius:20px;overflow:hidden;border:1px solid rgba(201,169,97,.3);position:relative;z-index:2;box-shadow:var(--shadow-lg)}
   .map-box iframe{width:100%;height:380px;border:0}
 
-  /* قسم أخبار الفيسبوك */
   .fb-news{background:var(--ivory-2);padding:80px 0}
   .fb-news-inner{max-width:600px;margin:0 auto;text-align:center}
   .fb-news-inner .fb-page{margin:0 auto;display:inline-block;text-align:left}
@@ -335,9 +437,15 @@
     .brand-name-ar{font-size:1rem}
     .footer-logo-img{max-width:280px}
     .hero-photo-card{max-width:340px;margin:0 auto}
-    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
-    .gallery-item:nth-child(1),.gallery-item:nth-child(4),.gallery-item:nth-child(5){grid-column:span 2;grid-row:span 1}
-    .gallery-item:nth-child(2),.gallery-item:nth-child(3){grid-column:span 1;grid-row:span 1}
+    /* معرض الصور على التابلت */
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px}
+    .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+    .gallery-item:nth-child(2){grid-column:span 1;grid-row:span 1}
+    .gallery-item:nth-child(3){grid-column:span 1;grid-row:span 1}
+    .gallery-item:nth-child(4){grid-column:span 1;grid-row:span 1}
+    .gallery-item:nth-child(5){grid-column:span 1;grid-row:span 1}
+    .lightbox{padding:20px}
+    .lightbox-close{top:16px;left:16px;width:42px;height:42px}
   }
   @media(max-width:450px){
     .hero h1{font-size:1.8rem}
@@ -346,8 +454,22 @@
     .about-stats{grid-template-columns:1fr}
     .section-head h2{font-size:1.6rem}
     .footer-logo-img{max-width:240px}
-    .gallery-grid{grid-template-columns:1fr;grid-auto-rows:220px}
+    /* معرض الصور على الموبايل — كل صورة بشكل بورتريه جميل */
+    .gallery-grid{grid-template-columns:1fr;grid-auto-rows:auto;gap:14px}
+    .gallery-item{aspect-ratio:4/5}
     .gallery-item:nth-child(n){grid-column:span 1;grid-row:span 1}
+  }
+
+  /* ===== Fallback للصور المكسورة ===== */
+  .img-fallback{
+    background:linear-gradient(135deg,#0a1f3d,#1e4573) !important;
+    display:flex !important;align-items:center;justify-content:center;
+    color:var(--gold-2) !important;
+    font-family:'Tajawal',sans-serif;
+    font-size:.9rem;
+    text-align:center;
+    padding:20px;
+    min-height:100px;
   }
 </style>
 </head>
@@ -355,7 +477,7 @@
 
 <div id="progress"></div>
 
-<!-- تحميل Facebook SDK مرة واحدة -->
+<!-- Facebook SDK -->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
   src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v19.0"></script>
@@ -365,11 +487,11 @@
     <a href="#top" class="brand">
       <div class="brand-logo-block">
         <span class="brand-name-ar" data-ar="سهاد امام" data-en="Sohad Emam">سهاد امام</span>
-        <img src="logo-symbol.png" alt="مكتب سهاد امام المحامي بالنقض ومعاونوه" class="brand-logo-img">
+        <img src="logo-symbol.png" alt="مكتب سهاد امام المحامي بالنقض ومعاونوه" class="brand-logo-img" fetchpriority="high" decoding="async" onerror="imgFallback(this)">
       </div>
     </a>
 
-    <button class="menu-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <button class="menu-toggle" onclick="document.getElementById('menu').classList.toggle('open')" aria-label="القائمة">☰</button>
 
     <ul class="nav-links" id="menu">
       <li><a href="#about" data-ar="عن المكتب" data-en="About">عن المكتب</a></li>
@@ -421,7 +543,7 @@
       </div>
 
       <div class="hero-photo-card reveal">
-        <img src="hero.png" alt="المحامي سهاد امام - المكتب">
+        <img src="hero.png" alt="المحامي سهاد امام - المكتب" fetchpriority="high" decoding="async" onerror="imgFallback(this)">
         <div class="hero-photo-caption">
           <span class="name">المحامي / سهاد امام</span>
           <span class="role" data-ar="محامي بالنقض والإدارية العليا" data-en="Attorney before Court of Cassation">محامي بالنقض والإدارية العليا</span>
@@ -440,7 +562,7 @@
     </div>
     <div class="about-grid">
       <div class="about-visual reveal">
-        <img src="reading.png" alt="المحامي يقرأ المستندات">
+        <img src="reading.png" alt="المحامي يقرأ المستندات" loading="lazy" decoding="async" onerror="imgFallback(this)">
       </div>
       <div class="about-text reveal">
         <h3 data-ar="تأسس المكتب وفقًا لقوانين <span>جمهورية مصر العربية</span>" data-en="Founded under the laws of the <span>Arab Republic of Egypt</span>">تأسس المكتب وفقًا لقوانين <span>جمهورية مصر العربية</span></h3>
@@ -533,7 +655,7 @@
     <div class="founder-grid">
       <div class="founder-visual reveal">
         <div class="founder-photo">
-          <img src="founder.png" alt="المحامي سهاد امام">
+          <img src="founder.png" alt="المحامي سهاد امام" loading="lazy" decoding="async" onerror="imgFallback(this)">
         </div>
         <div class="founder-badge">
           <b>+30</b>
@@ -561,14 +683,24 @@
     <div class="section-head reveal">
       <span class="section-tag" data-ar="معرض الصور" data-en="Gallery">معرض الصور</span>
       <h2 data-ar="لمحات من <span class='accent'>مكتبنا</span>" data-en="Moments from <span class='accent'>Our Firm</span>">لمحات من <span class="accent">مكتبنا</span></h2>
-      <p data-ar="جولة سريعة في أروقة المكتب ولحظات العمل اليومي" data-en="A quick tour through our office and daily work moments">جولة سريعة في أروقة المكتب ولحظات العمل اليومي</p>
+      <p data-ar="جولة سريعة في أروقة المكتب ولحظات العمل اليومي — اضغط أي صورة لعرضها بحجم كامل" data-en="A quick tour through our office and daily work moments — click any image to view full size">جولة سريعة في أروقة المكتب ولحظات العمل اليومي — اضغط أي صورة لعرضها بحجم كامل</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item reveal"><img src="hero.png" alt="المحامي سهاد امام"></div>
-      <div class="gallery-item reveal"><img src="office.png" alt="مكتب المحاماة"></div>
-      <div class="gallery-item reveal"><img src="founder.png" alt="مؤسس المكتب"></div>
-      <div class="gallery-item reveal"><img src="reading.png" alt="قراءة المستندات"></div>
-      <div class="gallery-item reveal"><img src="pointing.png" alt="مناقشة قانونية"></div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img'))">
+        <img src="hero.png" alt="المحامي سهاد امام" loading="lazy" decoding="async" onerror="imgFallback(this)">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img'))">
+        <img src="office.png" alt="مكتب المحاماة" loading="lazy" decoding="async" onerror="imgFallback(this)">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img'))">
+        <img src="founder.png" alt="مؤسس المكتب" loading="lazy" decoding="async" onerror="imgFallback(this)">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img'))">
+        <img src="reading.png" alt="قراءة المستندات" loading="lazy" decoding="async" onerror="imgFallback(this)">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img'))">
+        <img src="pointing.png" alt="مناقشة قانونية" loading="lazy" decoding="async" onerror="imgFallback(this)">
+      </div>
     </div>
   </div>
 </section>
@@ -610,7 +742,7 @@
     </div>
     <div class="consult-wrapper">
       <div class="consult-visual reveal">
-        <img src="pointing.png" alt="مناقشة قانونية">
+        <img src="pointing.png" alt="مناقشة قانونية" loading="lazy" decoding="async" onerror="imgFallback(this)">
       </div>
       <div class="consult-text reveal">
         <h2 data-ar="نقدم لك <span class='accent'>استشارة قانونية شاملة</span>" data-en="We provide <span class='accent'>comprehensive legal consultation</span>">نقدم لك <span class="accent">استشارة قانونية شاملة</span></h2>
@@ -722,7 +854,6 @@
   </div>
 </section>
 
-<!-- قسم أخبار الفيسبوك -->
 <section class="fb-news" id="fb-news">
   <div class="container">
     <div class="section-head reveal">
@@ -831,7 +962,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand-block">
-        <img src="logo-full.png" alt="مكتب سهاد امام المحامي بالنقض ومعاونوه" class="footer-logo-img">
+        <img src="logo-full.png" alt="مكتب سهاد امام المحامي بالنقض ومعاونوه" class="footer-logo-img" loading="lazy" decoding="async" onerror="imgFallback(this)">
         <p data-ar="مؤسسة قانونية متكاملة تجمع بين الخبرة والاحترافية، ونقدم خدماتنا عبر 6 قطاعات متخصصة للأفراد والشركات." data-en="An integrated legal institution combining expertise and professionalism, offering services through 6 specialized sectors for individuals and corporations.">مؤسسة قانونية متكاملة تجمع بين الخبرة والاحترافية، ونقدم خدماتنا عبر 6 قطاعات متخصصة للأفراد والشركات.</p>
       </div>
       <div class="footer-col">
@@ -867,7 +998,14 @@
    class="float-btn float-whatsapp" title="WhatsApp" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-<button class="float-btn float-top" id="backTop" title="Top">↑</button>
+<button class="float-btn float-top" id="backTop" title="Top" aria-label="العودة لأعلى">↑</button>
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+  <button class="lightbox-close" onclick="closeLightbox(event, true)" aria-label="إغلاق">×</button>
+  <img src="" alt="" id="lightboxImg">
+  <span class="lightbox-caption" id="lightboxCaption"></span>
+</div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -992,6 +1130,51 @@
     success.style.display = 'block';
     success.scrollIntoView({behavior:'smooth', block:'center'});
     form.reset();
+  }
+
+  /* ========== Lightbox ========== */
+  function openLightbox(img){
+    if(!img || !img.src) return;
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    cap.textContent = img.alt || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e, force){
+    const lb = document.getElementById('lightbox');
+    if(force || e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')){
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeLightbox(null, true);
+  });
+
+  /* ========== Fallback للصور المكسورة ========== */
+  function imgFallback(img){
+    if(img.dataset.failed) return;
+    img.dataset.failed = '1';
+    const alt = img.alt || '';
+    // SVG placeholder أنيق بدل الصورة المكسورة
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="#0a1f3d"/>' +
+      '<stop offset="1" stop-color="#1e4573"/>' +
+      '</linearGradient></defs>' +
+      '<rect width="600" height="600" fill="url(#g)"/>' +
+      '<text x="300" y="290" fill="#c9a961" font-family="Georgia,serif" font-size="120" text-anchor="middle">⚖</text>' +
+      '<text x="300" y="380" fill="#c9a961" font-family="Georgia,serif" font-size="28" text-anchor="middle">Sohad Emam Law Firm</text>' +
+      '</svg>';
+    img.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    img.onerror = null;
+    img.style.objectFit = 'cover';
   }
 </script>
 </body>
